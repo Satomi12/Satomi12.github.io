@@ -116,7 +116,7 @@
 <meta property="og:description" content="解决回文串问题的思路有不少，暴力方法和动态规划都可以解决，但是它们的时间复杂度达到了 $O(n^2)$，在某些情况下会超时。 本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://pt138cevn.bkt.clouddn.com/1059982876-58b966b759200.png">
-<meta property="og:updated_time" content="2019-06-23T08:37:28.301Z">
+<meta property="og:updated_time" content="2019-07-09T14:12:22.387Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决回文串问题的利器 Manacher 算法">
 <meta name="twitter:description" content="解决回文串问题的思路有不少，暴力方法和动态规划都可以解决，但是它们的时间复杂度达到了 $O(n^2)$，在某些情况下会超时。 本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。">
@@ -449,7 +449,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-23 16:37:28" itemprop="dateModified" datetime="2019-06-23T16:37:28+08:00">2019-06-23</time>
+                <time title="修改时间：2019-07-09 22:12:22" itemprop="dateModified" datetime="2019-07-09T22:12:22+08:00">2019-07-09</time>
               
             
           </span>
@@ -522,13 +522,10 @@
 
       
         <p>解决回文串问题的思路有不少，暴力方法和动态规划都可以解决，但是它们的时间复杂度达到了 $O(n^2)$，在某些情况下会超时。</p>
-<div class="note default">本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。</div>
-
-<a id="more"></a>
+<p><div class="note default">本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。</div><br><a id="more"></a></p>
 <h2 id="处理输入字符串"><a href="#处理输入字符串" class="headerlink" title="处理输入字符串"></a>处理输入字符串</h2><p>因为回文串有两种形式：奇回文串（如 aba），偶回文串，（ 如 aa）。为了处理上的方便，我们将输入字符串做一些特殊处理。例如串 <code>ababac</code>，将其处理成 <code>$#a#b#a#b#a#c##</code>。</p>
-<div class="note info"><p>处理后字符串首尾的 $ 和 # 是为了防止越界。</p></div>
-
-<h2 id="p-数组"><a href="#p-数组" class="headerlink" title="p 数组"></a>p 数组</h2><p>在这里引入一个新的辅助数组p，p[i] 表示以 i 中心的最长回文串的长度，p数组的示例如下表所示：</p>
+<p><div class="note info"><p>处理后字符串首尾的 $ 和 # 是为了防止越界。</p></div></p>
+<h2 id="p-数组"><a href="#p-数组" class="headerlink" title="p 数组"></a>p 数组</h2><p>在这里引入一个新的辅助数组p，p[i] 表示以 i 为中心的最长回文串的半径长度，p数组的示例如下表所示：</p>
 <div class="table-container">
 <table>
 <thead>
@@ -613,7 +610,7 @@
 <h2 id="如何求-p-数组"><a href="#如何求-p-数组" class="headerlink" title="如何求 p 数组"></a>如何求 p 数组</h2><p><img src="http://pt138cevn.bkt.clouddn.com/1059982876-58b966b759200.png" alt="i 的对称点 j"></p>
 <p>首先引入两个变量 id，mx。id 表示目前为止右边界最远的回文串的中心，mx 表示这个最远的右边界。接着设置变量 i 遍历 s_new:</p>
 <ol>
-<li><p>若 i &lt; mx，i 关于 id 的对称点为 j = 2 * id - i，显然 p[j] 已被求出。然后 p[i] = min(p[j], mx-i)，因为我们只能确定以 id 中心，mx - id 为半径的回文串左右两边是对称的，超出这个范围（指大于 mx 和 小于 i - mx 的部分）则要手动判断，若发现以 i 为中心的回文串的右边界较 mx 更远，则更新 id 和 mx。</p>
+<li><p>若 i &lt; mx，i 关于 id 的对称点为 j = 2 * id - i，显然 p[j] 已被求出。然后 p[i] = min(p[j], mx-i)，因为我们只能确定以 id 中心，mx - id 为半径的回文串左右两边是对称的，超出这个范围（指大于 mx 和 小于mx关于id的对称点的部分）则要手动判断，若发现以 i 为中心的回文串的右边界较 mx 更远，则更新 id 和 mx。</p>
 </li>
 <li><p>若 i &gt;= mx，则置 p[i] = 1，然后手动寻找以 i 为中心的回文串的边界，最后可能要更新 id 和 mx。</p>
 </li>
@@ -802,7 +799,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -858,7 +855,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

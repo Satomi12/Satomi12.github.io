@@ -107,20 +107,22 @@
 
 
 
-  <meta name="description" content="数据库种类繁多，如何能有效地连接数据库？本文介绍 JDBC API 的使用方法。首先什么是 JDBC，如下定义： JDBC(Java DataBase Connectivity)，java数据库连接，就是 Java 语言中针对各个数据库厂商的产品各不相同，而定义的统一规范。">
-<meta name="keywords" content="JDBC,MySQL,Java">
+  <meta name="description" content="环境Servlet文件上传需要commons-fileupload和commons-io两个包，下载完以后导入到Idea项目中。 上传页面在WEB-INF目录下新建一个upload.jsp文件，代码如下： 12345678910111213141516&amp;lt;%@ page contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; la">
+<meta name="keywords" content="Java,Servlet,Web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JDBC 连接数据库">
-<meta property="og:url" content="http://Satomi12.github.io/2019/07/02/JDBC/index.html">
+<meta property="og:title" content="Servlet文件上传">
+<meta property="og:url" content="http://Satomi12.github.io/2019/07/09/upload/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="数据库种类繁多，如何能有效地连接数据库？本文介绍 JDBC API 的使用方法。首先什么是 JDBC，如下定义： JDBC(Java DataBase Connectivity)，java数据库连接，就是 Java 语言中针对各个数据库厂商的产品各不相同，而定义的统一规范。">
+<meta property="og:description" content="环境Servlet文件上传需要commons-fileupload和commons-io两个包，下载完以后导入到Idea项目中。 上传页面在WEB-INF目录下新建一个upload.jsp文件，代码如下： 12345678910111213141516&amp;lt;%@ page contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; la">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://pt138cevn.bkt.clouddn.com/jdbc.png">
-<meta property="og:updated_time" content="2019-07-02T07:46:09.755Z">
+<meta property="og:image" content="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.44.51.png">
+<meta property="og:image" content="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.50.44.png">
+<meta property="og:image" content="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.56.58.png">
+<meta property="og:updated_time" content="2019-07-09T13:17:19.466Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JDBC 连接数据库">
-<meta name="twitter:description" content="数据库种类繁多，如何能有效地连接数据库？本文介绍 JDBC API 的使用方法。首先什么是 JDBC，如下定义： JDBC(Java DataBase Connectivity)，java数据库连接，就是 Java 语言中针对各个数据库厂商的产品各不相同，而定义的统一规范。">
-<meta name="twitter:image" content="http://pt138cevn.bkt.clouddn.com/jdbc.png">
+<meta name="twitter:title" content="Servlet文件上传">
+<meta name="twitter:description" content="环境Servlet文件上传需要commons-fileupload和commons-io两个包，下载完以后导入到Idea项目中。 上传页面在WEB-INF目录下新建一个upload.jsp文件，代码如下： 12345678910111213141516&amp;lt;%@ page contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot; la">
+<meta name="twitter:image" content="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.44.51.png">
 
 
 
@@ -130,7 +132,7 @@
 
   
   
-  <link rel="canonical" href="http://Satomi12.github.io/2019/07/02/JDBC/">
+  <link rel="canonical" href="http://Satomi12.github.io/2019/07/09/upload/">
 
 
 
@@ -140,7 +142,7 @@
   };
 </script>
 
-  <title>JDBC 连接数据库 | 我的博客</title>
+  <title>Servlet文件上传 | 我的博客</title>
   
 
 
@@ -389,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/07/02/JDBC/">
+    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/07/09/upload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao">
@@ -406,7 +408,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JDBC 连接数据库
+          <h1 class="post-title" itemprop="name headline">Servlet文件上传
 
               
             
@@ -432,7 +434,7 @@
                 
               
 
-              <time title="创建时间：2019-07-02 13:52:48 / 修改时间：15:46:09" itemprop="dateCreated datePublished" datetime="2019-07-02T13:52:48+08:00">2019-07-02</time>
+              <time title="创建时间：2019-07-09 11:37:24 / 修改时间：21:17:19" itemprop="dateCreated datePublished" datetime="2019-07-09T11:37:24+08:00">2019-07-09</time>
             
 
             
@@ -454,7 +456,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
 
                 
                 
@@ -473,8 +475,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/02/JDBC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/02/JDBC/" itemprop="commentCount"></span>
+                <a href="/2019/07/09/upload/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/09/upload/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -509,71 +511,100 @@
       
 
       
-        <p>数据库种类繁多，如何能有效地连接数据库？本文介绍 JDBC API 的使用方法。首先什么是 JDBC，如下定义：</p>
-<p><div class="note default"><p>JDBC(Java DataBase Connectivity)，java数据库连接，就是 Java 语言中针对各个数据库厂商的产品各不相同，而定义的统一规范。</p></div><br><a id="more"></a></p>
-<h2 id="JDBC-是什么"><a href="#JDBC-是什么" class="headerlink" title="JDBC 是什么"></a>JDBC 是什么</h2><p>如前所述，JDBC 是语言规范，是 java 语言中定义的一组接口，各个数据库厂商按照这个规范，结合各自的数据库产品，实现规范中的接口。从而达到了为程序员隐藏数据库驱动实现细节的目的，java 程序员只需要调用 JDBC API 即可完成数据库连接，数据读取等操作。</p>
-<h2 id="数据库驱动"><a href="#数据库驱动" class="headerlink" title="数据库驱动"></a>数据库驱动</h2><p>我们安装好数据库之后，应用程序并不能直接使用数据库，必须要通过数据库驱动程序去和数据库打交道，这个数据库驱动程序，实际上就是各数据库厂商对 JDBC 接口的实现。</p>
-<h2 id="常用的-JDBC-接口"><a href="#常用的-JDBC-接口" class="headerlink" title="常用的 JDBC 接口"></a>常用的 JDBC 接口</h2><h3 id="Driver"><a href="#Driver" class="headerlink" title="Driver"></a>Driver</h3><p>Driver 接口由数据库厂商提供，我们只需要使用 Driver 接口即可。在使用 JDBC API 连接数据库之前，必须在 DriverManager 上注册 Driver 驱动程序，以mysql为例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);   <span class="comment">// mysql 8.0以上</span></span><br></pre></td></tr></table></figure>
-<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><p>Connection 接口与特定的数据库建立连接，然后就可以在该连接上执行数据库操作了。采用 DriverManager.getConnection(url, user, pass) 获取数据库连接：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://host:port/database"</span>, <span class="string">"user"</span>, <span class="string">"password"</span>);   <span class="comment">// 其中 host 和 port为默认的话，可以省略</span></span><br></pre></td></tr></table></figure>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>Servlet文件上传需要<a href="http://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi" target="_blank" rel="noopener">commons-fileupload</a>和<a href="http://commons.apache.org/proper/commons-io/download_io.cgi" target="_blank" rel="noopener">commons-io</a>两个包，下载完以后导入到Idea项目中。</p>
+<h2 id="上传页面"><a href="#上传页面" class="headerlink" title="上传页面"></a>上传页面</h2><p>在WEB-INF目录下新建一个upload.jsp文件，代码如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"content-type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1 align="center"&gt;文件上传&lt;/h1&gt;</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/servletupload"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">    学号&lt;input type=<span class="string">"text"</span> name=<span class="string">"id"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    姓名&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    选择文件&lt;input type=<span class="string">"file"</span> name=<span class="string">"file"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"submit"</span>/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>注意这里表单的method必须是post，因为传输的是二进制数据，而且文件是不可能添加到url后面传输的。</strong>表单中有文件传输时，enctype也必须为multipart/form-data，它表示指定传输数据为二进制类型，如图片、mp3等。</p>
+<a id="more"></a>
+<h2 id="文件上传API"><a href="#文件上传API" class="headerlink" title="文件上传API"></a>文件上传API</h2><p>当表单获取到用户的输入以后，转向action指定的Servlet进行后台处理。</p>
+<h3 id="DiskFileItemFactory"><a href="#DiskFileItemFactory" class="headerlink" title="DiskFileItemFactory"></a>DiskFileItemFactory</h3><p>存在于fileupload包下面的DiskFileItemFactory类是创建FileItem对象的工厂，可以对它进行一些配置，在解析生成FileItem对象时需要用到。这个工厂类常用的方法有：</p>
+<ul>
+<li>setSizeThreshold(int sizeThreshold)：设置阀值，当文件大小小于该阀值时，文件直接存到内存中；超过该阀值时，会将文件临时存储到磁盘缓冲区中。</li>
+<li>setRepository(File repository)：指定临时文件目录，可以采用默认值System.getProperty(“java.io.tmpdir”)。</li>
+<li>DiskFileItemFactory(int sizeThreshold, file repository)：构造方法可以接收阀值和临时文件目录。</li>
+</ul>
+<h3 id="ServletFileUpload"><a href="#ServletFileUpload" class="headerlink" title="ServletFileUpload"></a>ServletFileUpload</h3><p>该类负责处理上传的文件，可以将request请求中的表单输入项解析成一个个FileItem对象，然后利用FileItem对象进行后续处理。在创建ServletFileUpload对象时需要指定之前创建的工厂对象DiskFileItemFactory，以便之后解析为FileItem对象时使用。</p>
+<p>常用的方法有：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">boolean isMultipartContent(HttpServletRequest req)</td>
+<td style="text-align:center">判断上传表单是否为multipart/form-data类型</td>
+</tr>
+<tr>
+<td style="text-align:center">List<fileitem> parseRequest(HttpServletRequest req)</fileitem></td>
+<td style="text-align:center">解析request中的表单输入项，返回一个List</td>
+</tr>
+<tr>
+<td style="text-align:center">setFileSizeMax(long fileMaxSize)</td>
+<td style="text-align:center">设置上传的单个文件的最大值，单位是字节</td>
+</tr>
+<tr>
+<td style="text-align:center">setSizeMax(long maxSize)</td>
+<td style="text-align:center">设置表单数据的总大小</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p> <div class="note info"><p>之所以要设置上传文件的最大值，是为了防止客户端恶意上传超大文件来浪费服务器端的存储空间。</p></div></p>
+<h3 id="FileItem"><a href="#FileItem" class="headerlink" title="FileItem"></a>FileItem</h3><p>ServletFileUpload解析request后将数据封装在FileItem对象中，我们可以利用该文件来获取输入，亦或是将文件数据写入文件。<strong>注意，非文件数据也会被封装到FileItem中，只要其在表单之中。</strong></p>
 <p>常用方法：</p>
-<ul>
-<li>createStatement()：创建执行 sql 的 statement。</li>
-<li>prepareStatement(sql)：如上，不过该方法会预编译 sql 语句，多次执行同一 sql 语句效率会提升。</li>
-<li>prepareCall(sql)：创建执行存储过程的callableStatement对象。</li>
-<li>setAutoCommit(boolean autoCommit)：设置事务是否自动提交。</li>
-<li>commit() ：在连接上提交事务。</li>
-<li>rollback() ：在连接上回滚事务。</li>
-</ul>
-<h3 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h3><p><strong>用于执行sql语句并返回结果集。</strong></p>
-<p>三种Statement类：</p>
-<ul>
-<li>Statement：发送简单的sql语句，不带参数，<strong>有sql注入风险</strong>。</li>
-<li>PreparedStatement：继承自Statement，可以带参数，会预编译sql语句，执行效率高，还可以防止sql注入，所以一般用该类代替Statement。</li>
-<li>CallableStatement：继承自PreparedStatement接口，由方法prepareCall创建，用于调用存储过程。</li>
-</ul>
-<p>常用方法：</p>
-<ul>
-<li>execute(String sql):运行语句，返回是否有结果集</li>
-<li>executeQuery(String sql)：运行select语句，返回ResultSet结果集。</li>
-<li>executeUpdate(String sql)：运行insert/update/delete操作，返回更新的行数。</li>
-<li>addBatch(String sql) ：把多条sql语句放到一个批处理中。</li>
-<li>executeBatch()：向数据库发送一批sql语句执行。</li>
-</ul>
-<h3 id="ResultSet"><a href="#ResultSet" class="headerlink" title="ResultSet"></a>ResultSet</h3><p>接收由Statement执行sql语句返回的结果集。</p>
-<p>　　ResultSet提供检索不同类型字段的方法，常用的有：</p>
-<ul>
-<li>getString(int index)、getString(String columnName)：获得在数据库里是varchar、char等类型的数据对象。</li>
-<li>getFloat(int index)、getFloat(String columnName)：获得在数据库里是Float类型的数据对象。</li>
-<li>getDate(int index)、getDate(String columnName)：获得在数据库里是Date类型的数据。</li>
-<li>getBoolean(int index)、getBoolean(String columnName)：获得在数据库里是Boolean类型的数据。</li>
-<li>getObject(int index)、getObject(String columnName)：获取在数据库里任意类型的数据。</li>
-</ul>
-<p>ResultSet还提供了对结果集进行滚动的方法：</p>
-<ul>
-<li>next()：移动到下一行</li>
-<li>Previous()：移动到前一行</li>
-<li>absolute(int row)：移动到指定行</li>
-<li>beforeFirst()：移动resultSet的最前面。</li>
-<li>afterLast() ：移动到resultSet的最后面。</li>
-</ul>
-<p>使用后依次关闭对象及连接：ResultSet → Statement → Connection。</p>
-<h2 id="使用JDBC的步骤"><a href="#使用JDBC的步骤" class="headerlink" title="使用JDBC的步骤"></a>使用JDBC的步骤</h2><h3 id="注册驱动"><a href="#注册驱动" class="headerlink" title="注册驱动"></a>注册驱动</h3><p>方式一：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class.forName(<span class="string">"com.mysql.cj.jdbc.Driver"</span>);</span><br></pre></td></tr></table></figure>
-<p>方式二：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DriverManager.registerDriver(com.mysql.cj.jdbc.Driver);</span><br></pre></td></tr></table></figure>
-<p>现在一般采用方式一，为什么不采用方式二？</p>
-<p>原因是在JDBC规范中明确要求Driver类必须向DriverManager注册自己，即任何一个JDBCDriver的Driver类的代码都必须类似如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> classMyJDBCDriver implements Driver &#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">       DriverManager.registerDriver(<span class="keyword">new</span> MyJDBCDriver());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到Driver在静态初始化块中已经进行了注册，如果采用方式二就会造成重复注册，从而在DriverManager中产生两个一样的驱动，并会对具体的驱动类产生依赖。而方式一中的Class.forName(String)的作用是要求JVM查找并加载指定的类，类加载到内存中时会执行静态初始化块和静态构造方法，如果在类中有静态初始化器的话，JVM必然会执行该类的静态代码段。</p>
-<h3 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection conn = DriverManager.getConnection(url, user, password);</span><br></pre></td></tr></table></figure>
-<p>url用来标识数据库的位置，写法为：</p>
-<p><img src="http://pt138cevn.bkt.clouddn.com/jdbc.png" alt="jdbc url"></p>
-<h3 id="创建执行SQL语句的Statement"><a href="#创建执行SQL语句的Statement" class="headerlink" title="创建执行SQL语句的Statement"></a>创建执行SQL语句的Statement</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"SELECT cust_id, ? FROM customers"</span>;   <span class="comment">// ? 表示占位符</span></span><br><span class="line">PreparedStatement pstmt = conn.prepareStatement(sql);</span><br><span class="line">pstmt.setString(<span class="number">1</span>, <span class="string">"cust_name"</span>);</span><br><span class="line">ResultSet rs = pstmt.executeQuery();</span><br></pre></td></tr></table></figure>
-<h3 id="处理执行结果"><a href="#处理执行结果" class="headerlink" title="处理执行结果"></a>处理执行结果</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">    <span class="keyword">int</span> id = rs.getInt(<span class="number">1</span>);</span><br><span class="line">    String name = rs.getString(<span class="number">2</span>);</span><br><span class="line">    System.out.println(id + <span class="string">" "</span> + name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>处理完执行结果后别忘了释放资源！</strong></p>
-<h2 id="一个完整的示例"><a href="#一个完整的示例" class="headerlink" title="一个完整的示例"></a>一个完整的示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.DriverManager;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MysqlTest</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String DRIVER = <span class="string">"com.mysql.cj.jdbc.Driver"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String DB_URL = <span class="string">"jdbc:mysql:///crashcourse"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String USER = <span class="string">"tao"</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> String PASS = <span class="string">"qwe12345"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 注册驱动</span></span><br><span class="line">            Class.forName(DRIVER);</span><br><span class="line">            <span class="comment">// 建立连接</span></span><br><span class="line">            Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);</span><br><span class="line"></span><br><span class="line">            String sql = <span class="string">"SELECT customers.cust_id, ?, SUM(quantity*item_price) AS total\n"</span> +</span><br><span class="line">                    <span class="string">"FROM customers, orders, orderitems\n"</span> +</span><br><span class="line">                    <span class="string">"WHERE customers.cust_id = orders.cust_id AND orders.order_num = orderitems.order_num\n"</span> +</span><br><span class="line">                    <span class="string">"GROUP BY customers.cust_id\n"</span> +</span><br><span class="line">                    <span class="string">"ORDER BY total"</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 创建PreparedStatement</span></span><br><span class="line">            PreparedStatement pstmt = conn.prepareStatement(sql);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 占位符从 1 开始</span></span><br><span class="line">            pstmt.setString(<span class="number">1</span>, <span class="string">"cust_name"</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 执行SQL并返回结果集</span></span><br><span class="line">            ResultSet rs = pstmt.executeQuery();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 处理结果集</span></span><br><span class="line">            <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="comment">//结果集的列从 1 开始</span></span><br><span class="line">                <span class="keyword">int</span> id = rs.getInt(<span class="number">1</span>);</span><br><span class="line">                String name = rs.getString(<span class="number">2</span>);</span><br><span class="line">                Float total = rs.getFloat(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(id + <span class="string">" "</span> + name + <span class="string">" "</span> + total);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 释放资源</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                rs.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    pstmt.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        conn.close();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">方法</th>
+<th style="text-align:center">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">boolean isFormField()</td>
+<td style="text-align:center">判断FileItem对象封装的是普通文本表单字段，还是一个文件表单字段</td>
+</tr>
+<tr>
+<td style="text-align:center">String getName()</td>
+<td style="text-align:center">获取文件上传字段的文件名，不同浏览器中获取的文件名可能不一样</td>
+</tr>
+<tr>
+<td style="text-align:center">write(File file)</td>
+<td style="text-align:center">用于将FileItem对象中的数据写入到服务器端的某个文件中</td>
+</tr>
+<tr>
+<td style="text-align:center">String getString()</td>
+<td style="text-align:center">将FileItem中保存的数据流以一个字符串形式返回</td>
+</tr>
+<tr>
+<td style="text-align:center">delete()</td>
+<td style="text-align:center">清空FileItem对象中存放的内容</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="后台Servlet"><a href="#后台Servlet" class="headerlink" title="后台Servlet"></a>后台Servlet</h2><p>文件上传主要分为以下3个步骤：</p>
+<ol>
+<li>创建DiskFileItemFactory对象，设置阀值大小和临时文件目录。</li>
+<li>创建ServletFileUpload对象，设置上传文件大小以及表单总大小，解析HttpServletRequest得到List<fileitem>对象</fileitem></li>
+<li>遍历List<fileitem>，对于每一个FileItem执行处理，如果是文件数据，则将其写入指定文件</fileitem></li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileItem;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.disk.DiskFileItemFactory;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.servlet.ServletFileUpload;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UploadServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String UPLOAD_DIRECTORY = <span class="string">"upload"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_FILE_SIZE = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">40</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> MAX_SIZE = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">50</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> MEMORY_THROSHOLD = <span class="number">1024</span>*<span class="number">1024</span>*<span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">//创建DiskFileItemFactory</span></span><br><span class="line">        DiskFileItemFactory factory = <span class="keyword">new</span> DiskFileItemFactory();</span><br><span class="line">        factory.setSizeThreshold(MEMORY_THROSHOLD);</span><br><span class="line">        factory.setRepository(<span class="keyword">new</span> File(System.getProperty(<span class="string">"java.io.tmpdir"</span>)));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建ServletFileUpload</span></span><br><span class="line">        ServletFileUpload upload = <span class="keyword">new</span> ServletFileUpload(factory);</span><br><span class="line">        upload.setFileSizeMax(MAX_FILE_SIZE);</span><br><span class="line">        upload.setSizeMax(MAX_SIZE);</span><br><span class="line">        upload.setHeaderEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">        String uploadPath = req.getServletContext().getRealPath(<span class="string">"/"</span>) + UPLOAD_DIRECTORY;</span><br><span class="line">        File dir = <span class="keyword">new</span> File(uploadPath);</span><br><span class="line">        <span class="comment">//不存在目录，则创建</span></span><br><span class="line">        <span class="keyword">if</span> (!dir.exists()) &#123;</span><br><span class="line">            dir.mkdir();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            List&lt;FileItem&gt; items = upload.parseRequest(req);</span><br><span class="line">            <span class="comment">//处理FileItem</span></span><br><span class="line">            <span class="keyword">for</span> (FileItem item : items) &#123;</span><br><span class="line">                <span class="comment">//普通文本表单字段</span></span><br><span class="line">                <span class="keyword">if</span> (item.isFormField()) &#123;</span><br><span class="line">                    String name = item.getFieldName();</span><br><span class="line">                    String value = item.getString(<span class="string">"UTF-8"</span>);</span><br><span class="line">                    System.out.println(<span class="string">"name: "</span> + name + <span class="string">", value: "</span> + value);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (item.getSize() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    String fileName = <span class="keyword">new</span> File(item.getName()).getName();</span><br><span class="line">                    String filePath = uploadPath + File.separator + fileName;</span><br><span class="line">                    File storeFile = <span class="keyword">new</span> File(filePath);</span><br><span class="line">                    item.write(storeFile);</span><br><span class="line"></span><br><span class="line">                    req.setAttribute(<span class="string">"message"</span>, <span class="string">"文件上传成功！"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//没有上传附件的情况</span></span><br><span class="line">                    req.setAttribute(<span class="string">"message"</span>, <span class="string">"没有上传文件！"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            req.setAttribute(<span class="string">"message"</span>, <span class="string">"错误信息："</span> + e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//上传处理完毕后跳转页面</span></span><br><span class="line">        req.getServletContext().getRequestDispatcher(<span class="string">"/message.jsp"</span>).forward(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其他代码"><a href="#其他代码" class="headerlink" title="其他代码"></a>其他代码</h2><p>创建message.jsp文件并输入以下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@page</span>  contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"content-type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Message&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h2 align="center"&gt;$&#123;message&#125;&lt;/h2&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>web.xml中增加以下配置：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>upload<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--xxxx处填写包名--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>xxxx.UploadServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>upload<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servletupload<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>在Idea中运行项目(Tomcat要配置好)，然后在浏览器上输入<code>http://localhost:8080/upload.jsp</code>，可以看到如下界面：</p>
+<p><img src="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.44.51.png" alt="上传页面"></p>
+<p>点击提交后：</p>
+<p><img src="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.50.44.png" alt="上传成功"></p>
+<p>在Idea中可以看到文件成功上传了：</p>
+<p><img src="http://pt138cevn.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-09%20%E4%B8%8B%E5%8D%882.56.58.png" alt="成功上传"></p>
 <hr>
 
       
@@ -612,14 +643,14 @@
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <li><strong>本文标题：</strong> JDBC 连接数据库</li>
+  <li><strong>本文标题：</strong> Servlet文件上传</li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Tao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://Satomi12.github.io/2019/07/02/JDBC/" title="JDBC 连接数据库">http://Satomi12.github.io/2019/07/02/JDBC/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/07/02/JDBC/" aria-label="复制成功！"></i></span>
+    <a href="http://Satomi12.github.io/2019/07/09/upload/" title="Servlet文件上传">http://Satomi12.github.io/2019/07/09/upload/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/07/09/upload/" aria-label="复制成功！"></i></span>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -648,11 +679,11 @@
         
         <div class="post-tags">
           
-            <a href="/tags/JDBC/" rel="tag"><i class="fa fa-tag"></i> JDBC</a>
-          
-            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
-          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Servlet/" rel="tag"><i class="fa fa-tag"></i> Servlet</a>
+          
+            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i> Web</a>
           
         </div>
       
@@ -665,8 +696,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/21/Manacher/" rel="next" title="解决回文串问题的利器 Manacher 算法">
-                <i class="fa fa-chevron-left"></i> 解决回文串问题的利器 Manacher 算法
+              <a href="/2019/07/08/javamail/" rel="next" title="利用JavaMail API发送邮件">
+                <i class="fa fa-chevron-left"></i> 利用JavaMail API发送邮件
               </a>
             
           </div>
@@ -674,10 +705,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/02/MysqlWhere/" rel="prev" title="Mysql中where 1=1和where 1=0的作用">
-                Mysql中where 1=1和where 1=0的作用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -923,7 +950,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC-是什么"><span class="nav-number">1.</span> <span class="nav-text">JDBC 是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库驱动"><span class="nav-number">2.</span> <span class="nav-text">数据库驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的-JDBC-接口"><span class="nav-number">3.</span> <span class="nav-text">常用的 JDBC 接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Driver"><span class="nav-number">3.1.</span> <span class="nav-text">Driver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Connection"><span class="nav-number">3.2.</span> <span class="nav-text">Connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Statement"><span class="nav-number">3.3.</span> <span class="nav-text">Statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResultSet"><span class="nav-number">3.4.</span> <span class="nav-text">ResultSet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用JDBC的步骤"><span class="nav-number">4.</span> <span class="nav-text">使用JDBC的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册驱动"><span class="nav-number">4.1.</span> <span class="nav-text">注册驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立连接"><span class="nav-number">4.2.</span> <span class="nav-text">建立连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建执行SQL语句的Statement"><span class="nav-number">4.3.</span> <span class="nav-text">创建执行SQL语句的Statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理执行结果"><span class="nav-number">4.4.</span> <span class="nav-text">处理执行结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个完整的示例"><span class="nav-number">5.</span> <span class="nav-text">一个完整的示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#上传页面"><span class="nav-number">2.</span> <span class="nav-text">上传页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件上传API"><span class="nav-number">3.</span> <span class="nav-text">文件上传API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DiskFileItemFactory"><span class="nav-number">3.1.</span> <span class="nav-text">DiskFileItemFactory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletFileUpload"><span class="nav-number">3.2.</span> <span class="nav-text">ServletFileUpload</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileItem"><span class="nav-number">3.3.</span> <span class="nav-text">FileItem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台Servlet"><span class="nav-number">4.</span> <span class="nav-text">后台Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他代码"><span class="nav-number">5.</span> <span class="nav-text">其他代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行"><span class="nav-number">6.</span> <span class="nav-text">运行</span></a></li></ol></div>
             
 
           </div>

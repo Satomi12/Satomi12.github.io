@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="我们平时在一个网站上注册时，经常是收到一封邮件，然后获取里面的验证码或者直接点击邮件里面的链接来完成注册。这个过程是怎么实现的呢？ 回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-08T13:48:27.408Z">
+<meta property="og:updated_time" content="2019-07-09T14:18:13.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用JavaMail API发送邮件">
 <meta name="twitter:description" content="我们平时在一个网站上注册时，经常是收到一封邮件，然后获取里面的验证码或者直接点击邮件里面的链接来完成注册。这个过程是怎么实现的呢？ 回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。">
@@ -430,12 +430,24 @@
                 
               
 
-              <time title="创建时间：2019-07-08 13:15:46 / 修改时间：21:48:27" itemprop="dateCreated datePublished" datetime="2019-07-08T13:15:46+08:00">2019-07-08</time>
+              <time title="创建时间：2019-07-08 13:15:46" itemprop="dateCreated datePublished" datetime="2019-07-08T13:15:46+08:00">2019-07-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-09 22:18:13" itemprop="dateModified" datetime="2019-07-09T22:18:13+08:00">2019-07-09</time>
               
             
           </span>
@@ -518,7 +530,7 @@
 <li>Message类：javax.mail.Message类表示一封电子邮件，发送时需要先将邮件内容封装到该类中。</li>
 <li>Transport类：javax.mail.Transport，顾名思义就是就来发送Message对象到smtp服务器上。</li>
 <li>Session类：javax.mail.Session，主要有两个作用，一是用来配置应用程序需要的环境信息，如主机名、端口号；二是用来建立客户端与smtp服务器之间的会话信息。Message对象和Transport对象的创建都需要用到Session对象。</li>
-<li>Store类，javax.mail.Store，接收邮件的API类，作用和发送邮件时的Transport类相对，将获取到的邮件数据封装到Message中。</li>
+<li>Store类：javax.mail.Store，接收邮件的API类，作用和发送邮件时的Transport类相对，将获取到的邮件数据封装到Message中。</li>
 </ul>
 <h2 id="创建Session对象"><a href="#创建Session对象" class="headerlink" title="创建Session对象"></a>创建Session对象</h2><p>Transport对象和Message对象均依赖于Session对象，因此我们必须首先创建Session对象。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Session <span class="title">getSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//协议</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.transport.protocol"</span>, <span class="string">"smtp"</span>);</span><br><span class="line">    <span class="comment">//主机名</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">    <span class="comment">//端口号，qq的smtp服务器端口号为465或587</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.ssl.enable"</span>, <span class="string">"true"</span>);</span><br><span class="line">    <span class="comment">//是否在控制台显示调试信息</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.debug"</span>, <span class="string">"true"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Session.getInstance(props);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -537,7 +549,7 @@
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    Session session = getSession();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        MimeMessage message = getMessage(session, req);</span><br><span class="line"></span><br><span class="line">        Transport transport = session.getTransport();</span><br><span class="line">        <span class="comment">//注意这里的密码不是邮箱密码，而是授权码（qq邮箱采用）</span></span><br><span class="line">        transport.connect(<span class="string">"1034271380@qq.com"</span>, <span class="string">"xnrweuodmwfdbcfg"</span>);</span><br><span class="line">        transport.sendMessage(message, message.getAllRecipients());</span><br><span class="line"></span><br><span class="line">        transport.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="可能遇到的问题"><a href="#可能遇到的问题" class="headerlink" title="可能遇到的问题"></a>可能遇到的问题</h2><ol>
-<li>密码：有的邮箱采用独立密码，用的采用授权码（qq邮箱）</li>
+<li>密码：有的邮箱采用独立密码，有的采用授权码（qq邮箱）</li>
 <li>smtp服务：有的时候发送不成功，可能是因为邮箱的smtp服务没打开</li>
 <li>收件箱收不到邮件，也许是被当成垃圾邮件拒收了，可能可以在垃圾箱中找到也可能找不到，可以换个收件箱试试</li>
 </ol>
@@ -638,6 +650,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/07/09/upload/" rel="prev" title="Servlet文件上传">
+                Servlet文件上传 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -711,7 +727,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -767,7 +783,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

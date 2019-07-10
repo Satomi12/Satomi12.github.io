@@ -386,6 +386,181 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/07/09/upload/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content="This is a new blog!">
+      <meta itemprop="image" content="/images/Breloom.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/09/upload/" class="post-title-link" itemprop="url">Servlet文件上传</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-09 11:37:24 / 修改时间：21:17:19" itemprop="dateCreated datePublished" datetime="2019-07-09T11:37:24+08:00">2019-07-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>Servlet文件上传需要<a href="http://commons.apache.org/proper/commons-fileupload/download_fileupload.cgi" target="_blank" rel="noopener">commons-fileupload</a>和<a href="http://commons.apache.org/proper/commons-io/download_io.cgi" target="_blank" rel="noopener">commons-io</a>两个包，下载完以后导入到Idea项目中。</p>
+<h2 id="上传页面"><a href="#上传页面" class="headerlink" title="上传页面"></a>上传页面</h2><p>在WEB-INF目录下新建一个upload.jsp文件，代码如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"content-type"</span> content=<span class="string">"text/html; charset=UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1 align="center"&gt;文件上传&lt;/h1&gt;</span><br><span class="line">&lt;form method=<span class="string">"post"</span> action=<span class="string">"/servletupload"</span> enctype=<span class="string">"multipart/form-data"</span>&gt;</span><br><span class="line">    学号&lt;input type=<span class="string">"text"</span> name=<span class="string">"id"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    姓名&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    选择文件&lt;input type=<span class="string">"file"</span> name=<span class="string">"file"</span>/&gt;&lt;br/&gt;</span><br><span class="line">    &lt;input type=<span class="string">"submit"</span> value=<span class="string">"submit"</span>/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>注意这里表单的method必须是post，因为传输的是二进制数据，而且文件是不可能添加到url后面传输的。</strong>表单中有文件传输时，enctype也必须为multipart/form-data，它表示指定传输数据为二进制类型，如图片、mp3等。</p>
+        
+      
+    </div>
+
+    
+      
+        <!--noindex-->
+        
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/09/upload/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+        <!--/noindex-->
+      
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/07/08/javamail/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -431,12 +606,24 @@
                 
               
 
-              <time title="创建时间：2019-07-08 13:15:46 / 修改时间：21:48:27" itemprop="dateCreated datePublished" datetime="2019-07-08T13:15:46+08:00">2019-07-08</time>
+              <time title="创建时间：2019-07-08 13:15:46" itemprop="dateCreated datePublished" datetime="2019-07-08T13:15:46+08:00">2019-07-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-09 22:18:13" itemprop="dateModified" datetime="2019-07-09T22:18:13+08:00">2019-07-09</time>
               
             
           </span>
@@ -967,7 +1154,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-23 16:37:28" itemprop="dateModified" datetime="2019-06-23T16:37:28+08:00">2019-06-23</time>
+                <time title="修改时间：2019-07-09 22:12:22" itemprop="dateModified" datetime="2019-07-09T22:12:22+08:00">2019-07-09</time>
               
             
           </span>
@@ -1021,10 +1208,10 @@
       
         
           <p>解决回文串问题的思路有不少，暴力方法和动态规划都可以解决，但是它们的时间复杂度达到了 $O(n^2)$，在某些情况下会超时。</p>
-<div class="note default">本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。</div>
+<p><div class="note default">本文介绍的 Manacher 算法仅仅只有 $O(n)$ 的时间复杂度。</div><br>
         
       
-    </div>
+    </p></div>
 
     
       
@@ -1489,7 +1676,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1545,7 +1732,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2216,6 +2407,8 @@
 
   
   
+    
+      
     
       
     
