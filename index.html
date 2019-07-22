@@ -444,7 +444,7 @@
                 
               
 
-              <time title="创建时间：2019-07-22 19:54:30 / 修改时间：20:18:00" itemprop="dateCreated datePublished" datetime="2019-07-22T19:54:30+08:00">2019-07-22</time>
+              <time title="创建时间：2019-07-22 19:54:30 / 修改时间：22:20:26" itemprop="dateCreated datePublished" datetime="2019-07-22T19:54:30+08:00">2019-07-22</time>
             
 
             
@@ -511,41 +511,14 @@ public class SerializeClass implements Serializable {...}
 <h2 id="Java序列化"><a href="#Java序列化" class="headerlink" title="Java序列化"></a>Java序列化</h2><p>首先创建一个Student类。</p>
 <pre class="lang-java"><code>
 public class Student implements Serializable {
-    private transient int id;
+    private int id;
     private String name;
     private String phoneNumber;
-
-    private static Student instance;
-
-    public static Student getInstance() {
-        if (instance == null) {
-            synchronized (Student.class) {
-                if (instance == null) {
-                    instance = new Student(1, "qw", "1234567890");
-                }
-            }
-        }
-        return instance;
-    }
 
     public Student(int id, String name, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
-    }
-
-    private void writeObject(ObjectOutputStream out) throws Exception {
-        out.defaultWriteObject();
-        out.writeObject(this.id);
-    }
-
-    private void readObject(ObjectInputStream in) throws Exception {
-        in.defaultReadObject();
-        this.id = (int) in.readObject();
-    }
-
-    private Object readResolve() {
-        return instance;
     }
 
     @Override
