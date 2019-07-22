@@ -154,7 +154,7 @@ template {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: #555;
   background: #eee;
@@ -166,7 +166,7 @@ body {
 }
 @media (min-width: 1200px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 h1,
@@ -497,7 +497,7 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
@@ -513,7 +513,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 16px;
 }
 pre {
   padding: 10px;
@@ -1292,7 +1292,7 @@ pre .javascript .function {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #821f58;
+  background: #b1a2ff;
 }
 .feed-link,
 .chat {
@@ -2407,7 +2407,7 @@ ul.breadcrumb {
   margin: 1em 0;
   padding: 0 2em;
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
 }
 ul.breadcrumb li {
   display: inline;
@@ -3093,6 +3093,22 @@ body {
   .pagination {
     margin: 8px 0 0;
   }
+}
+@font-face {
+  font-family: zihun;
+  src: url("/fonts/zihun.ttf");
+}
+.site-title {
+  font-size: 40px !important;
+  font-family: 'zihun' !important;
+}
+@font-face {
+  font-family: zihun;
+  src: url("/fonts/zihun.ttf");
+}
+.site-subtitle {
+  font-size: 20px !important;
+  font-family: 'zihun' !important;
 }
 .site-nav a:hover,
 .post-nav a:hover {

@@ -22,6 +22,19 @@
 <meta name="theme-color" content="#222">
 
 
+  
+  
+  
+  
+  
+  
+  
+  
+  <link href="/css/prism/default/prism.css" rel="stylesheet">
+
+
+
+
 
 
   
@@ -115,7 +128,7 @@
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="我们平时在一个网站上注册时，经常是收到一封邮件，然后获取里面的验证码或者直接点击邮件里面的链接来完成注册。这个过程是怎么实现的呢？ 回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-09T14:18:13.647Z">
+<meta property="og:updated_time" content="2019-07-22T05:43:08.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用JavaMail API发送邮件">
 <meta name="twitter:description" content="我们平时在一个网站上注册时，经常是收到一封邮件，然后获取里面的验证码或者直接点击邮件里面的链接来完成注册。这个过程是怎么实现的呢？ 回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。">
@@ -447,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-09 22:18:13" itemprop="dateModified" datetime="2019-07-09T22:18:13+08:00">2019-07-09</time>
+                <time title="修改时间：2019-07-22 13:43:08" itemprop="dateModified" datetime="2019-07-22T13:43:08+08:00">2019-07-22</time>
               
             
           </span>
@@ -520,9 +533,7 @@
 
       
         <p>我们平时在一个网站上注册时，经常是收到一封邮件，然后获取里面的验证码或者直接点击邮件里面的链接来完成注册。这个过程是怎么实现的呢？</p>
-<div class="note default"><p>回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。</p></div>
-
-<a id="more"></a>
+<p><div class="note default"><p>回忆一下计算机网络中的邮件发送，我们是在客户端上利用smtp协议将邮件传输到smtp服务器上，然后该smtp服务器将邮件发送到目标smtp服务器上，最后收件方用IMAP或者POP3协议从其smtp服务器上拉取邮件。</p></div><br><a id="more"></a></p>
 <h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>首先需要下载两个jar包：<a href="https://www.oracle.com/technetwork/java/javamail/index-138643.html" target="_blank" rel="noopener">Java Mail API</a>和<a href="https://www.oracle.com/technetwork/articles/java/index-135046.html" target="_blank" rel="noopener">Java Activation Framework（JAF）</a>。</p>
 <p>然后分别将其导入Idea的External Libraries（本地开发）中和WEB-INF/lib（部署）文件夹下。</p>
 <h2 id="JavaMail-API"><a href="#JavaMail-API" class="headerlink" title="JavaMail API"></a>JavaMail API</h2><p>JavaMail API主要包含4个类：</p>
@@ -533,14 +544,13 @@
 <li>Store类：javax.mail.Store，接收邮件的API类，作用和发送邮件时的Transport类相对，将获取到的邮件数据封装到Message中。</li>
 </ul>
 <h2 id="创建Session对象"><a href="#创建Session对象" class="headerlink" title="创建Session对象"></a>创建Session对象</h2><p>Transport对象和Message对象均依赖于Session对象，因此我们必须首先创建Session对象。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Session <span class="title">getSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//协议</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.transport.protocol"</span>, <span class="string">"smtp"</span>);</span><br><span class="line">    <span class="comment">//主机名</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">    <span class="comment">//端口号，qq的smtp服务器端口号为465或587</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.ssl.enable"</span>, <span class="string">"true"</span>);</span><br><span class="line">    <span class="comment">//是否在控制台显示调试信息</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.debug"</span>, <span class="string">"true"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> Session.getInstance(props);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Session <span class="title">getSession</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//协议</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.transport.protocol"</span>, <span class="string">"smtp"</span>);</span><br><span class="line">    <span class="comment">//主机名</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.host"</span>, <span class="string">"smtp.qq.com"</span>);</span><br><span class="line">    <span class="comment">//端口号，qq的smtp服务器端口号为465或587</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.port"</span>, <span class="string">"465"</span>);</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.auth"</span>, <span class="string">"true"</span>);</span><br><span class="line">    props.setProperty(<span class="string">"mail.smtp.ssl.enable"</span>, <span class="string">"true"</span>);</span><br><span class="line">    <span class="comment">//是否在控制台显示调试信息</span></span><br><span class="line">    props.setProperty(<span class="string">"mail.debug"</span>, <span class="string">"true"</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> Session.getInstance(props);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="创建Message对象"><a href="#创建Message对象" class="headerlink" title="创建Message对象"></a>创建Message对象</h2><h3 id="MimeBodyPart和MimeMultipart"><a href="#MimeBodyPart和MimeMultipart" class="headerlink" title="MimeBodyPart和MimeMultipart"></a>MimeBodyPart和MimeMultipart</h3><p>Message对象的内容可以看成是由一个个结点组成的，这其中涉及到两个类：<strong>MimeBodyPart</strong>和<strong>MimeMultipart</strong>。</p>
 <p>一个MimeBodyPart代表一个结点，MimeMultipart代表多个MimeBodyPart结点，这就意味着我们可以将多个MimeBodyPart结点组合成一个结点：比如正文中有多种类型的信息（文本，图片，视频等）会很有用。</p>
 <p>此外，多个MimeBodyPart之间也可以设置关联信息，如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">+------------------------- multipart/mixed ----------------------------+</span><br><span class="line">|                                                                      |</span><br><span class="line">|  +----------------- multipart/related ------------------+            |</span><br><span class="line">|  |                                                      |            |</span><br><span class="line">|  |  +----- multipart/alternative ------+  +----------+  |  +------+  |</span><br><span class="line">|  |  |                                  |  | 内嵌资源  |   | | 附件  |  |</span><br><span class="line">|  |  |  +------------+  +------------+  |  +----------+  |  +------+  |</span><br><span class="line">|  |  |  | 纯文本正文   |  | 超文本正文  |  |                |            |</span><br><span class="line">|  |  |  +------------+  +------------+  |  +----------+  |  +------+  |</span><br><span class="line">|  |  |                                  |  | 内嵌资源  |  |  | 附件  |  | </span><br><span class="line">|  |  +----------------------------------+  +----------+  |  +------+  |</span><br><span class="line">|  |                                                      |            |</span><br><span class="line">|  +------------------------------------------------------+            |</span><br><span class="line">|                                                                      |</span><br><span class="line">+----------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> MimeMessage <span class="title">getMessage</span><span class="params">(Session session, HttpServletRequest req)</span> <span class="keyword">throws</span> MessagingException </span>&#123;</span><br><span class="line">    MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line">    <span class="comment">//主题</span></span><br><span class="line">    message.setSubject(<span class="string">"Subject"</span>);</span><br><span class="line">    message.setFrom(<span class="string">"1034271380@qq.com"</span>);</span><br><span class="line">    <span class="comment">//多个收件人用setRecipients</span></span><br><span class="line">    message.setRecipient(MimeMessage.RecipientType.TO, <span class="keyword">new</span> InternetAddress(<span class="string">"licdftl@gmail.com"</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">//文本结点</span></span><br><span class="line">    MimeBodyPart text = <span class="keyword">new</span> MimeBodyPart();</span><br><span class="line">    text.setContent(<span class="string">"这是一张图片&lt;br/&gt;&lt;p&gt;&lt;img src='http://pt138cevn.bkt.clouddn.com/Celebi.png' width='200' height='200'/&gt;&lt;/p&gt;&lt;br/&gt;"</span>, <span class="string">"text/html; charset=UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//当前网站的绝对路径</span></span><br><span class="line">    String curPath = req.getServletContext().getRealPath(<span class="string">"/"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//图片结点</span></span><br><span class="line">    MimeBodyPart image = <span class="keyword">new</span> MimeBodyPart();</span><br><span class="line">    DataHandler handler = <span class="keyword">new</span> DataHandler(<span class="keyword">new</span> FileDataSource(curPath + <span class="string">"WEB-INF/classes/Garchomp.png"</span>));</span><br><span class="line">    image.setDataHandler(handler);</span><br><span class="line">    image.setContentID(<span class="string">"garchomp"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//文本+图片结合</span></span><br><span class="line">    MimeMultipart content = <span class="keyword">new</span> MimeMultipart();</span><br><span class="line">    content.addBodyPart(text);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//图片并没有按照预期显示在正文中，而是存在于附件中，暂时还不知道为什么，图片只好先使用外链</span></span><br><span class="line">    <span class="comment">//content.addBodyPart(image);</span></span><br><span class="line">    <span class="comment">//content.setSubType("related");</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//附件结点</span></span><br><span class="line">    MimeBodyPart attach = <span class="keyword">new</span> MimeBodyPart();</span><br><span class="line">    DataHandler docx = <span class="keyword">new</span> DataHandler(<span class="keyword">new</span> FileDataSource(curPath + <span class="string">"WEB-INF/classes/wiki.docx"</span>));</span><br><span class="line">    attach.setDataHandler(docx);</span><br><span class="line">    <span class="comment">//附件名字要加上后缀</span></span><br><span class="line">    attach.setFileName(<span class="string">"MyWiki.docx"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//MimeMultipart中由MimeBodyPart组成，因此封装先前的MimeMultipart</span></span><br><span class="line">    MimeBodyPart body = <span class="keyword">new</span> MimeBodyPart();</span><br><span class="line">    body.setContent(content);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//组合之前的MimeBodyPart</span></span><br><span class="line">    MimeMultipart pub = <span class="keyword">new</span> MimeMultipart();</span><br><span class="line">    pub.addBodyPart(body);</span><br><span class="line">    pub.addBodyPart(attach);</span><br><span class="line">    pub.setSubType(<span class="string">"mixed"</span>);</span><br><span class="line"></span><br><span class="line">    message.setContent(pub);</span><br><span class="line">    message.setSentDate(<span class="keyword">new</span> Date());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> message;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>这里邮件发送的是带图片和附件的邮件，除此之外还可以发送html邮件，只需要在setContent中嵌入html代码即可，另外其他Mime支持的文件也可以传输。</p></div>
-
+<p><div class="note info"><p>这里邮件发送的是带图片和附件的邮件，除此之外还可以发送html邮件，只需要在setContent中嵌入html代码即可，另外其他Mime支持的文件也可以传输。</p></div></p>
 <h2 id="发送邮件"><a href="#发送邮件" class="headerlink" title="发送邮件"></a>发送邮件</h2><p>发送邮件的过程就很简单了：</p>
 <ol>
 <li>利用Session对象创建Transport对象</li>
@@ -727,7 +737,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -787,7 +797,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1492,6 +1504,18 @@
   
 
   
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/prism/default/prism.js"></script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
