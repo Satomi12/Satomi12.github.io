@@ -120,18 +120,18 @@
 
 
 
-  <meta name="description" content="Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。 Serializable接口java 中只要实现了 Serializable 这个标记接口就可以序列化。  public class SerializeClass implements Serializable {...}   Java序列化首">
-<meta name="keywords" content="序列化">
+  <meta name="description" content="准备工作在开始搭建之前，有两项准备工作要做。 创建表首先在数据库中创建两张表tb_trainer和tb_pokemon：  CREATE TABLE tb_trainer (     trainer_id INT NOT NULL AUTO_INCREMENT,     trainer_name VARCHAR(20) NOT NULL,     password VARCHAR(20) NOT">
+<meta name="keywords" content="Spring,SpringMVC,MyBatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java序列化">
-<meta property="og:url" content="http://Satomi12.github.io/2019/07/22/serialize/index.html">
+<meta property="og:title" content="Spring+SpringMVC+Mybatis整合">
+<meta property="og:url" content="http://Satomi12.github.io/2019/08/03/SSM/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。 Serializable接口java 中只要实现了 Serializable 这个标记接口就可以序列化。  public class SerializeClass implements Serializable {...}   Java序列化首">
+<meta property="og:description" content="准备工作在开始搭建之前，有两项准备工作要做。 创建表首先在数据库中创建两张表tb_trainer和tb_pokemon：  CREATE TABLE tb_trainer (     trainer_id INT NOT NULL AUTO_INCREMENT,     trainer_name VARCHAR(20) NOT NULL,     password VARCHAR(20) NOT">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-23T08:19:42.424Z">
+<meta property="og:updated_time" content="2019-08-05T08:09:31.547Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java序列化">
-<meta name="twitter:description" content="Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。 Serializable接口java 中只要实现了 Serializable 这个标记接口就可以序列化。  public class SerializeClass implements Serializable {...}   Java序列化首">
+<meta name="twitter:title" content="Spring+SpringMVC+Mybatis整合">
+<meta name="twitter:description" content="准备工作在开始搭建之前，有两项准备工作要做。 创建表首先在数据库中创建两张表tb_trainer和tb_pokemon：  CREATE TABLE tb_trainer (     trainer_id INT NOT NULL AUTO_INCREMENT,     trainer_name VARCHAR(20) NOT NULL,     password VARCHAR(20) NOT">
 
 
 
@@ -141,7 +141,7 @@
 
   
   
-  <link rel="canonical" href="http://Satomi12.github.io/2019/07/22/serialize/">
+  <link rel="canonical" href="http://Satomi12.github.io/2019/08/03/SSM/">
 
 
 
@@ -151,7 +151,7 @@
   };
 </script>
 
-  <title>Java序列化 | 我的博客</title>
+  <title>Spring+SpringMVC+Mybatis整合 | 我的博客</title>
   
 
 
@@ -400,7 +400,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/07/22/serialize/">
+    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/08/03/SSM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tao">
@@ -417,7 +417,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java序列化
+          <h1 class="post-title" itemprop="name headline">Spring+SpringMVC+Mybatis整合
 
               
             
@@ -443,7 +443,7 @@
                 
               
 
-              <time title="创建时间：2019-07-22 19:54:30" itemprop="dateCreated datePublished" datetime="2019-07-22T19:54:30+08:00">2019-07-22</time>
+              <time title="创建时间：2019-08-03 15:34:48" itemprop="dateCreated datePublished" datetime="2019-08-03T15:34:48+08:00">2019-08-03</time>
             
 
             
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-23 16:19:42" itemprop="dateModified" datetime="2019-07-23T16:19:42+08:00">2019-07-23</time>
+                <time title="修改时间：2019-08-05 16:09:31" itemprop="dateModified" datetime="2019-08-05T16:09:31+08:00">2019-08-05</time>
               
             
           </span>
@@ -477,7 +477,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
 
                 
                 
@@ -496,8 +496,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/22/serialize/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/22/serialize/" itemprop="commentCount"></span>
+                <a href="/2019/08/03/SSM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/03/SSM/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -532,243 +532,525 @@
       
 
       
-        <p>Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。</p>
-<h2 id="Serializable接口"><a href="#Serializable接口" class="headerlink" title="Serializable接口"></a>Serializable接口</h2><p>java 中只要实现了 Serializable 这个标记接口就可以序列化。</p>
-<pre class="lang-java"><code>
-public class SerializeClass implements Serializable {...}
-</code></pre>
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>在开始搭建之前，有两项准备工作要做。</p>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>首先在数据库中创建两张表tb_trainer和tb_pokemon：</p>
+<pre class="lang-sql"><code>
+CREATE TABLE tb_trainer (
+    trainer_id INT NOT NULL AUTO_INCREMENT,
+    trainer_name VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL,
+    age INT NOT NULL,
+    sex INT NOT NULL,
+    PRIMARY KEY (trainer_id)
+)ENGINE=InnoDB AUTO_INCREMENT=0;
+INSERT INTO tb_trainer(trainer_name, password, age, sex) VALUES('Tao', 'qwe12345', 20, 0);
+INSERT INTO tb_trainer(trainer_name, password, age, sex) VALUES('Ray', 'qwe12345', 20, 0);
 
-<h2 id="Java序列化"><a href="#Java序列化" class="headerlink" title="Java序列化"></a>Java序列化</h2><p>首先创建一个Student类:</p>
-<pre class="lang-java"><code>
-public class Student implements Serializable {
-    private int id;
-    private String name;
-    private String phoneNumber;
-
-    public Student(int id, String name, String phoneNumber) {
-        this.id = id;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-    }
-
-    @Override
-    public String toString() {
-        return id + " " + name + " " + phoneNumber;
-    }
-}
+CREATE TABLE tb_pokemon (
+    pokemon_id INT NOT NULL,
+    pokemon_name VARCHAR(20) NOT NULL,
+    trainer_id INT NOT NULL,
+    sex INT NOT NULL,
+    level INT NOT NULL,
+    PRIMARY KEY (pokemon_id)
+)ENGINE=InnoDB;
+INSERT INTO tb_pokemon(pokemon_id, pokemon_name, trainer_id, sex, level) VALUES(286, "Breloom", 1, 0, 71);
+INSERT INTO tb_pokemon(pokemon_id, pokemon_name, trainer_id, sex, level) VALUES(350, "Milotic", 1, 1, 71);
+INSERT INTO tb_pokemon(pokemon_id, pokemon_name, trainer_id, sex, level) VALUES(445, "Garchomp", 1, 0, 75);
+INSERT INTO tb_pokemon(pokemon_id, pokemon_name, trainer_id, sex, level) VALUES(448, "Lucario", 2, 0, 78);
 </code></pre>
 
 <a id="more"></a>
-<p>序列化的代码如下：</p>
+<h3 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h3><p>在Idea中新建Maven项目，选择maven-archetype-webapp创建一个新的工程。</p>
+<p>创建好之后，首先在pom.xml文件中引入项目所需的依赖：</p>
+<pre class="lang-xml"><code>
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-core --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-core&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-web --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-web&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-aop --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-aop&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-orm --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-orm&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-tx --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-tx&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-context --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-context&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.springframework/spring-test --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
+    &lt;version&gt;5.1.8.RELEASE&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/junit/junit --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;/groupId&gt;
+    &lt;artifactId&gt;junit&lt;/artifactId&gt;
+    &lt;version&gt;4.13-beta-3&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0.17&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+    &lt;version&gt;3.5.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+    &lt;version&gt;2.0.2&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/com.alibaba/druid --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+    &lt;artifactId&gt;druid&lt;/artifactId&gt;
+    &lt;version&gt;1.1.19&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+    &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+    &lt;version&gt;2.0.0-alpha0&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
+    &lt;artifactId&gt;tomcat-servlet-api&lt;/artifactId&gt;
+    &lt;version&gt;9.0.21&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- https://mvnrepository.com/artifact/javax.servlet/jstl --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+    &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>然后右键点击选择Add Framework Support，勾选Spring和Spring MVC，如果没有就先去Project Setting里面把Moudules中的Spring删去，这样Idea就能识别出maven引入的Spring版本了。这时可以选择自动生成Sping配置文件，也可以选择手动创建。</p>
+<h2 id="从MyBatis开始"><a href="#从MyBatis开始" class="headerlink" title="从MyBatis开始"></a>从MyBatis开始</h2><p>搭建SSM的时候，一般从MyBatis开始，MyBatis完成的工作就是建立映射java对象和数据库表之间的映射。</p>
+<h3 id="创建pojo类"><a href="#创建pojo类" class="headerlink" title="创建pojo类"></a>创建pojo类</h3><p>根据创建的表，这里需要两个类Trainer和Pokemon，如下：</p>
 <pre class="lang-java"><code>
-public class TestSerialize {
-    public static void main(String[] args) throws Exception {
-        Student stu = new Student(1001, "qwe", "13334560987");
-        System.out.println(stu);
+package com.pokehunter.pojo;
 
-        //对象保存的文件路径
-        String path = "/Users/raytao/mySerial.txt";
+public class Trainer {
+    private Integer trainerId;
+    private String trainerName;
+    private String password;
+    private Integer age;
+    private Integer sex;
 
-        //ObjectOutputStream和ObjectInputStream处理序列化与反序列化
-        ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(path));
-        output.writeObject(stu);
+    //省略了getter和setter
+
+    @Override
+    public String toString() {
+        return trainerId + " " + trainerName + " " + password + " " +
+                age + " " + sex;
     }
 }
 </code></pre>
 
-<h2 id="Java反序列化"><a href="#Java反序列化" class="headerlink" title="Java反序列化"></a>Java反序列化</h2><p>反序列化的过程与序列化类似，只不过执行反序列化的类变成了 ObjectInputStream。</p>
+
 <pre class="lang-java"><code>
-public class TestSerialize {
-    public static void main(String[] args) throws Exception {
-        String path = "/Users/raytao/mySerial.txt";
+package com.pokehunter.pojo;
 
-        ObjectInputStream input = new ObjectInputStream(new FileInputStream(path));
-        //readObject()执行反序列化
-        stu = (Student) input.readObject();
+public class Pokemon {
+    private Integer pokemonId;
+    private String pokemonName;
+    private Integer trainerId;
+    private Integer sex;
+    private Integer level;
 
-        System.out.println(stu);
+    //省略了getter和setter
+
+    @Override
+    public String toString() {
+        return pokemonId + " " + pokemonName + " " + trainerId + " " +
+                sex + " " + level;
     }
 }
 </code></pre>
 
-<h2 id="serialVersionUID属性"><a href="#serialVersionUID属性" class="headerlink" title="serialVersionUID属性"></a>serialVersionUID属性</h2><p>如果序列化一个对象以后该类的结构发生了变化，那么反序列化时会出现什么情况呢？</p>
-<p>在 Student 类中添加 address 属性:</p>
-<pre class="lang-java" data-line="4"><code>
-private transient int id;
-private String name;
-private String phoneNumber;
-private String address;
-</code></pre>
-
-<p>然后执行反序列化会发现报错:</p>
-<pre class="lang-none"><code>
-Exception in thread "main" java.io.InvalidClassException: Student; local class incompatible: stream classdesc serialVersionUID = 6470179443617815091, local class serialVersionUID = 7765393098516753233
-</code></pre>
-
-<p>错误信息说序列化前后serialVersionUID的值不一致，因为Student类的结构发生了变化，所以版本号（默认生成）当然会发生变化，从而反序列化时jvm发现存储的版本号和类中的不一致，就会报错。</p>
-<p>所以要在Student类中显示指定serialVersionUID，这样jvm就不会自动生成了，即使类的结构变化，因为类中已经有serialVersionUID，jvm也不会再次生成。</p>
-<pre class="lang-java" data-line="1"><code>
-private static final long serialVersionUID = 6470179443617815091L;
-
-private transient int id;
-private String name;
-private String phoneNumber;
-private String address;
-</code></pre>
-
-<p>这样，当对象序列化以后，不管类的结构发生什么变化，反序列化依然能够正常进行。</p>
-<div class="note info">
-因为序列化对象的时候，我们无法预料到之后类的结构会不会发生变化，会发生什么变化，因此总是为要序列化的类添加serialVersionUID字段是一个好的选择。
-</div>
-
-<p>另外要注意serialVersionUID字段的修饰符必须要是<code class="lang-markup">private static final long</code>，否则不起作用。</p>
-<h2 id="transient关键字"><a href="#transient关键字" class="headerlink" title="transient关键字"></a>transient关键字</h2><p>在序列化的过程中，有时有些属性我们并不想将其序列化保存，例如密码，否则可能会造成安全问题，transient关键字修饰的对象将不会被序列化保存。</p>
-<p>将Student类中的id改成transient修饰：</p>
-<pre class="lang-java" data-line="2"><code>
-//添加transient关键字
-private transient int id;
-private String name;
-private String phoneNumber;
-</code></pre>
-
-<p>然后将Student对象序列化和反序列化。</p>
+<h3 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h3><p>这里需要查询tb_trainer表和tb_pokemon表，因此需要两个dao接口。</p>
+<p>TrainerMapper接口：</p>
 <pre class="lang-java"><code>
-public class TestSerialize {
-    public static void main(String[] args) throws Exception {
-        Student stu = new Student(1, "qwe", "13334560987");;
-        System.out.println(stu);
+package com.pokehunter.dao;
 
-        String path = "/Users/raytao/mySerial.txt";
+import com.pokehunter.pojo.Trainer;
+import org.apache.ibatis.annotations.Param;
 
-        ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream(path));
-        output.writeObject(stu);
-
-        ObjectInputStream input = new ObjectInputStream(new FileInputStream(path));
-        stu = (Student) input.readObject();
-
-        System.out.println(stu);
-    }
+public interface TrainerMapper {
+    Trainer queryTrainerByNameAndPassword(@Param("user") String userName, @Param("password") String password);
 }
 </code></pre>
 
-<p>运行后得到如下结果</p>
-<pre class="lang-none"><code>
-1 qwe 13334560987
-0 qwe 13334560987
-</code></pre>
-
-<p>两次id值不一致，可见被transient修饰的属性并未序列化。</p>
-<h2 id="被transient修饰的属性能否序列化"><a href="#被transient修饰的属性能否序列化" class="headerlink" title="被transient修饰的属性能否序列化"></a>被transient修饰的属性能否序列化</h2><p>被transient修饰的属性真的能保证无法被序列化了吗？要回答这个问题，先来看看java源码中ArrayList的序列化机制。</p>
-<h3 id="ArrayList的序列化"><a href="#ArrayList的序列化" class="headerlink" title="ArrayList的序列化"></a>ArrayList的序列化</h3><pre class="lang-java"><code>
-/**
-* The array buffer into which the elements of the ArrayList are stored.
-* The capacity of the ArrayList is the length of this array buffer. Any
-* empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
-* will be expanded to DEFAULT_CAPACITY when the first element is added.
-*/
-transient Object[] elementData; // non-private to simplify nested class access
-</code></pre>
-
-<p>可以看到，ArrayList中的存储结构是一个被transient修饰的Object数组，而众所周知ArrayList数组毫无疑问是能序列化的，所以这似乎与前文transient不能被序列化相悖。</p>
-<p>再继续往下看，writeObject()这个函数是用来实现序列化的：</p>
-<pre class="lang-java" data-line="5, 11-13"><code>
-private void writeObject(java.io.ObjectOutputStream s)
-    throws java.io.IOException {
-    // Write out element count, and any hidden stuff
-    int expectedModCount = modCount;
-    s.defaultWriteObject();
-
-    // Write out size as capacity for behavioral compatibility with clone()
-    s.writeInt(size);
-
-    // Write out all elements in the proper order.
-    for (int i=0; i&lt;size; i++) {
-        s.writeObject(elementData[i]);
-    }
-
-    if (modCount != expectedModCount) {
-        throw new ConcurrentModificationException();
-    }
-}
-</code></pre>
-
-<p>注意第5行代码，该行代码调用了s的defaultWriteObject()方法，事实上，transient不能序列化是ObjectOutputStream的默认行为，但我们可以显示地指定某个属性被序列化，即使其被transient修饰也一样，如上述代码的11~13行所示。</p>
-<p>对于11~13行代码有两点需要注意：</p>
-<ul>
-<li>ArrayList只序列化存储了内容的那些单元(size)，对于空单元是不序列化的</li>
-<li>序列化是有顺序的，如同一个队列一样，先序列化的元素在readObject()中也要最先取出</li>
-</ul>
-<h3 id="序列化transient字段"><a href="#序列化transient字段" class="headerlink" title="序列化transient字段"></a>序列化transient字段</h3><p>transient字段可以被序列化，这是我们得出的结论。如何序列化与反序列呢？其实就和ArrayList的实现机制差不多，依葫芦画瓢就行。</p>
-<p>在Student类中添加writeObject方法和readObject方法:</p>
+<p>PokemonMapper接口：</p>
 <pre class="lang-java"><code>
-private void writeObject(ObjectOutputStream out) throws Exception {
-    out.defaultWriteObject();
-    out.writeObject(this.id);
-}
+package com.pokehunter.dao;
 
-private void readObject(ObjectInputStream in) throws Exception {
-    in.defaultReadObject();
-    this.id = (int) in.readObject();
+import com.pokehunter.pojo.Pokemon;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface PokemonMapper {
+    List&lt;Pokemon&gt; queryPokemonByTrainerId(@Param("id") String trainerId);
 }
 </code></pre>
 
-<p>在这两个方法中先是调用了默认的defaultWriteObject()和defaultReadObject()方法，然后再自行序列化与反序列化transient字段id。</p>
-<p>再次运行，发现序列化前后id一致：</p>
-<pre class="lang-none"><code>
-1 qwe 13334560987
-1 qwe 13334560987
+<h3 id="编写Mapper"><a href="#编写Mapper" class="headerlink" title="编写Mapper"></a>编写Mapper</h3><p>Mapper是定义具体sql操作的文件，有两个dao接口，可以定义两个mapper文件。<br>TrainMapper.xml:</p>
+<pre class="lang-xml"><code>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;
+&lt;mapper namespace="com.pokehunter.dao.TrainerMapper"&gt;
+    &lt;select id="queryTrainerByNameAndPassword" resultType="Trainer"&gt;
+        SELECT * FROM tb_trainer WHERE trainer_name = #{user} AND password = #{password}
+    &lt;/select&gt;
+&lt;/mapper&gt;
 </code></pre>
 
-<h2 id="序列化与单例模式"><a href="#序列化与单例模式" class="headerlink" title="序列化与单例模式"></a>序列化与单例模式</h2><p>在一般情况下序列化工作得很好，但是有些潜在的问题不能忽略：序列化会破坏单例模式。<br>先将Student类改造成符合单例模式的类，在类中添加以下代码:</p>
+<p>PokemonMapper.xml:</p>
+<pre class="lang-xml"><code>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;
+&lt;mapper namespace="com.pokehunter.dao.PokemonMapper"&gt;
+    &lt;select id="queryPokemonByTrainerId" resultType="Pokemon"&gt;
+        SELECT p.pokemon_id, p.pokemon_name, p.trainer_id, p.sex AS sex, p.level
+        FROM tb_trainer t INNER JOIN tb_pokemon p ON t.trainer_id = p.trainer_id
+        WHERE t.trainer_id = ${id}
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre>
+
+<h3 id="MyBatis配置文件"><a href="#MyBatis配置文件" class="headerlink" title="MyBatis配置文件"></a>MyBatis配置文件</h3><p>在resources目录下创建mybatis-config.xml配置文件：</p>
+<pre class="lang-xml"><code>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;
+&lt;configuration&gt;
+    &lt;settings&gt;
+        &lt;setting name="mapUnderscoreToCamelCase" value="true"/&gt;
+    &lt;/settings&gt;
+
+    &lt;typeAliases&gt;
+        &lt;typeAlias type="com.pokehunter.pojo.Trainer" alias="Trainer"/&gt;
+        &lt;typeAlias type="com.pokehunter.pojo.Pokemon" alias="Pokemon"/&gt;
+    &lt;/typeAliases&gt;
+&lt;/configuration&gt;
+</code></pre>
+
+<p>可以看到，这里并没有配置environments和mappers，因为这些都留到了之后的Spring配置文件中去配置。</p>
+<h2 id="Spring配置文件"><a href="#Spring配置文件" class="headerlink" title="Spring配置文件"></a>Spring配置文件</h2><p>Spring配置文件主要包括数据源，SqlSessionFactory，事务管理器，Mapper接口扫描等部分。如果是按webapp模版生成的工程，配置文件applicationContext.xml会默认在WEB-INF目录下，可以将它移到resources目录下，统一管理。</p>
+<pre class="lang-xml"><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"&gt;
+
+    &lt;context:property-placeholder location="classpath:properties/db.properties" /&gt;
+
+    &lt;bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close"&gt;
+        &lt;property name="driverClassName" value="${jdbc.driver}"/&gt;
+        &lt;property name="url" value="jdbc:mysql://${jdbc.host}:3306/${jdbc.database}?allowPublicKeyRetrieval=true"/&gt;
+        &lt;property name="username" value="${jdbc.username}"/&gt;
+        &lt;property name="password" value="${jdbc.password}"/&gt;
+        &lt;property name="initialSize" value="${jdbc.initialSize}"/&gt;
+        &lt;property name="maxActive" value="${jdbc.maxActive}"/&gt;
+        &lt;property name="minIdle" value="${jdbc.minIdle}"/&gt;
+        &lt;property name="maxWait" value="${jdbc.maxWait}"/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"&gt;
+        &lt;property name="dataSource" ref="dataSource"/&gt;
+        &lt;property name="mapperLocations" value="classpath:mappers/*.xml"/&gt;
+        &lt;property name="configLocation" value="classpath:/mybatis-config.xml"/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"&gt;
+        &lt;property name="basePackage" value="com.pokehunter.dao"/&gt;
+        &lt;property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/&gt;
+    &lt;/bean&gt;
+
+    &lt;bean id="transaction" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&gt;
+        &lt;property name="dataSource" ref="dataSource"/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<h2 id="测试Spring和MyBatis的整合"><a href="#测试Spring和MyBatis的整合" class="headerlink" title="测试Spring和MyBatis的整合"></a>测试Spring和MyBatis的整合</h2><p>及时地测试Spring和MyBatis的整合是很重要的，这样可以及时地发现并解决问题，不然等到整合了SpringMVC之后再想定位之前的问题就困难了，总结起来就是：不要让问题积累。<br>PokemonMapperSpringTest.java文件：</p>
 <pre class="lang-java"><code>
-private static Student instance;
+package com.pokehunter.dao;
 
-//双加载机制避免重排序问题
-public static Student getInstance() {
-    if (instance == null) {
-        synchronized (Student.class) {
-            if (instance == null) {
-                instance = new Student(1, "qwe", "13334560987");
-            }
+import com.pokehunter.pojo.Pokemon;
+import com.pokehunter.pojo.Trainer;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.List;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath:applicationContext.xml")
+public class PokemonMapperSpringTest {
+    @Autowired
+    private TrainerMapper trainerMapper;
+    @Autowired
+    private PokemonMapper pokemonMapper;
+
+    @Test
+    public void testQueryTrainerByNameAndPassword() {
+        Trainer trainer = trainerMapper.queryTrainerByNameAndPassword("Tao", "qwe12345");
+        System.out.println(trainer);
+    }
+
+    @Test
+    public void testQueryPokemonByTrainerId() {
+        List<pokemon> pokemons = pokemonMapper.queryPokemonByTrainerId(2);
+        for (Pokemon pokemon : pokemons) {
+            System.out.println(pokemon);
         }
     }
-    return instance;
 }
-</code></pre>
+</pokemon></code></pre>
 
-<p>将创建Student类的方式改为getInstance()获取，为此可以将构造方法声明为私有的，从而只能调用getInstance()获取对象。</p>
-<pre class="lang-java"><code>
-Student stu = Student.getInstance();
-</code></pre>
-
-<p>运行之后，好像似乎没有什么问题:</p>
+<p>执行测试：</p>
 <pre class="lang-none"><code>
-1 qwe 13334560987
-1 qwe 13334560987
+2019-08-04 23:30:32,783 [main] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@53f3bdbd] will not be managed by Spring
+2019-08-04 23:30:32,788 [main] [com.pokehunter.dao.TrainerMapper.queryTrainerByNameAndPassword]-[DEBUG] ==>  Preparing: SELECT * FROM tb_trainer WHERE trainer_name = ? AND password = ? 
+2019-08-04 23:30:32,814 [main] [com.pokehunter.dao.TrainerMapper.queryTrainerByNameAndPassword]-[DEBUG] ==> Parameters: Tao(String), qwe12345(String)
+2019-08-04 23:30:32,843 [main] [com.pokehunter.dao.TrainerMapper.queryTrainerByNameAndPassword]-[DEBUG] &lt;==      Total: 1
+2019-08-04 23:30:32,845 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533bda92]
+1 Tao qwe12345 20 0
+2019-08-04 23:30:32,847 [main] [org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]-[DEBUG] After test method: context [DefaultTestContext@3224f60b testClass = PokemonMapperSpringTest, testInstance = com.pokehunter.dao.PokemonMapperSpringTest@6c49835d, testMethod = testQueryTrainerByNameAndPassword@PokemonMapperSpringTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@63e2203c testClass = PokemonMapperSpringTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2019-08-04 23:30:32,848 [main] [org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]-[DEBUG] After test class: context [DefaultTestContext@3224f60b testClass = PokemonMapperSpringTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@63e2203c testClass = PokemonMapperSpringTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2019-08-04 23:30:32,852 [Thread-0] [org.springframework.context.support.GenericApplicationContext]-[DEBUG] Closing org.springframework.context.support.GenericApplicationContext@4493d195, started on Sun Aug 04 23:30:31 CST 2019
+2019-08-04 23:30:32,853 [Thread-0] [com.alibaba.druid.pool.DruidDataSource]-[INFO] {dataSource-1} closing ...
+2019-08-04 23:30:32,857 [Thread-0] [com.alibaba.druid.pool.DruidDataSource]-[INFO] {dataSource-1} closed
 </code></pre>
 
-<p>把Student类中的toString()方法注释掉以后再次运行</p>
+
 <pre class="lang-none"><code>
-Student@5acf9800
-Student@17f052a3
+2019-08-04 23:31:35,802 [main] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@15f47664] will not be managed by Spring
+2019-08-04 23:31:35,807 [main] [com.pokehunter.dao.PokemonMapper.queryPokemonByTrainerId]-[DEBUG] ==>  Preparing: SELECT * FROM tb_trainer t INNER JOIN tb_pokemon p ON t.trainer_id = p.trainer_id WHERE t.trainer_id = 2 
+2019-08-04 23:31:35,832 [main] [com.pokehunter.dao.PokemonMapper.queryPokemonByTrainerId]-[DEBUG] ==> Parameters: 
+2019-08-04 23:31:35,857 [main] [com.pokehunter.dao.PokemonMapper.queryPokemonByTrainerId]-[DEBUG] &lt;==      Total: 1
+2019-08-04 23:31:35,859 [main] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@533bda92]
+448 Lucario 2 0 78
+2019-08-04 23:31:35,861 [main] [org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]-[DEBUG] After test method: context [DefaultTestContext@3224f60b testClass = PokemonMapperSpringTest, testInstance = com.pokehunter.dao.PokemonMapperSpringTest@6c49835d, testMethod = testQueryPokemonByTrainerId@PokemonMapperSpringTest, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@63e2203c testClass = PokemonMapperSpringTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+2019-08-04 23:31:35,862 [main] [org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener]-[DEBUG] After test class: context [DefaultTestContext@3224f60b testClass = PokemonMapperSpringTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@63e2203c testClass = PokemonMapperSpringTest, locations = '{classpath:applicationContext.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextCustomizers = set[[empty]], contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+2019-08-04 23:31:35,867 [Thread-0] [org.springframework.context.support.GenericApplicationContext]-[DEBUG] Closing org.springframework.context.support.GenericApplicationContext@4493d195, started on Sun Aug 04 23:31:34 CST 2019
+2019-08-04 23:31:35,868 [Thread-0] [com.alibaba.druid.pool.DruidDataSource]-[INFO] {dataSource-1} closing ...
+2019-08-04 23:31:35,877 [Thread-0] [com.alibaba.druid.pool.DruidDataSource]-[INFO] {dataSource-1} closed
 </code></pre>
 
-<p>可以看到序列化前后是两个不同的Student对象，换句话说，反序列化的时候生成了一个新的对象，只不过把保存的数据填充进去了。这显然破坏了单例模式只能有一个实例对象的约定。</p>
-<p>解决方法也很简单，只需要在Student类中加入readResolve()回调方法就可以了:</p>
+<p>可以看到，数据库访问是成功的，Spring和MyBatis的整合没有问题。</p>
+<h2 id="SpringMVC部分"><a href="#SpringMVC部分" class="headerlink" title="SpringMVC部分"></a>SpringMVC部分</h2><p>接下来的问题就是怎样将数据库中的信息以用户友好的形式呈现出来，换句话说，该考虑如何处理用户的请求并返回处理之后的视图了。是SpringMVC登场的时候了。</p>
+<h3 id="web-xml文件"><a href="#web-xml文件" class="headerlink" title="web.xml文件"></a>web.xml文件</h3><p>SpringMVC中最关键就是拦截用户请求并转发到对应控制器的DispatcherServlet，web.xml配置如下：</p>
+<pre class="lang-xml"><code>
+&lt;!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" &gt;
+
+&lt;web-app&gt;
+  &lt;display-name&gt;Archetype Created Web Application&lt;/display-name&gt;
+    &lt;!--配置Spring配置文件的位置--&gt;
+    &lt;context-param&gt;
+        &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+        &lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;
+    &lt;/context-param&gt;
+    &lt;listener&gt;
+        &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+    &lt;/listener&gt;
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+        &lt;!--SpringMVC配置文件位置--&gt;
+        &lt;init-param&gt;
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+            &lt;param-value&gt;classpath:springMVC.xml&lt;/param-value&gt;
+        &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;dispatcher&lt;/servlet-name&gt;
+        &lt;!--拦截所有请求--&gt;
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</code></pre>
+
+<h3 id="SpringMVC配置文件"><a href="#SpringMVC配置文件" class="headerlink" title="SpringMVC配置文件"></a>SpringMVC配置文件</h3><p>SpringMVC配置文件默认是在WEB—INF目录下的dispatcher-servlet.xml文件。这里将它移动到resources目录下并重新命名，是通过init-param实现的，如果不指定该标签，默认是[servlet-name]-servlet.xml的格式。</p>
+<pre class="lang-xml"><code>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd"&gt;
+
+    &lt;context:component-scan base-package="com.pokehunter.controller"/&gt;
+
+    &lt;!--视图解析器--&gt;
+    &lt;bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
+        &lt;property name="prefix" value="/WEB-INF/pages/"/&gt;
+        &lt;property name="suffix" value=".jsp"/&gt;
+    &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre>
+
+<h3 id="控制器Controller"><a href="#控制器Controller" class="headerlink" title="控制器Controller"></a>控制器Controller</h3><p>在com.pokehunter.controller下创建PoekemonController.java文件，内容如下：</p>
 <pre class="lang-java"><code>
-private Object readResolve() {
-    return instance;
+package com.pokehunter.controller;
+
+import com.pokehunter.dao.PokemonMapper;
+import com.pokehunter.dao.TrainerMapper;
+import com.pokehunter.pojo.Pokemon;
+import com.pokehunter.pojo.Trainer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+
+@org.springframework.stereotype.Controller
+public class PokemonController implements Controller {
+    @Autowired
+    private TrainerMapper trainerMapper;
+    @Autowired
+    private PokemonMapper pokemonMapper;
+
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        return null;
+    }
+
+    @RequestMapping("/pokemons")
+    public ModelAndView getPokemons(@RequestParam("userName") String username,
+                                    @RequestParam("password") String password) {
+        ModelAndView mav = null;
+
+        Trainer trainer = this.trainerMapper.queryTrainerByNameAndPassword(username, password);
+        if (trainer != null) {
+            List<pokemon> pokemons = this.pokemonMapper.queryPokemonByTrainerId(trainer.getTrainerId());
+            System.out.println(pokemons.size());
+            mav = new ModelAndView("pokemon");
+            mav.addObject("pokemons", pokemons);
+        }
+
+        return mav;
+    }
 }
+</pokemon></code></pre>
+
+<h3 id="jsp页面"><a href="#jsp页面" class="headerlink" title="jsp页面"></a>jsp页面</h3><p>尽管现在jsp已经过时了，但这里仍使用它作为样例。<br>在WEB-INF目录下创建index.jsp，如果已存在则只需修改即可，输入以下内容：</p>
+<pre class="lang-jsp"><code>
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Login&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form method="post" action="/pokemons"&gt;
+    User: &lt;input type="text" name="userName"/&gt; &lt;br/&gt;
+    Password: &lt;input type="text" name="password"/&gt;&lt;br/&gt;
+    &lt;input type="submit" value="submit"/&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p>为什么这样做可以防止生成新对象？ObjectInputStream对象执行readObject()方法的时候会看类中有没有readResolve()方法，有的话就不会创建新对象。</p>
-<p>再次运行之后观察结果：</p>
-<pre class="lang-none"><code>
-Student@5acf9800
-Student@5acf9800
+<p>该页面接收训练师名字和密码查询训练师拥有的pokemon情况。<br>接下来是详情显示页面，在WEB-INF目录下新建pages文件夹，创建文件pokemon.jsp：</p>
+<pre class="lang-jsp"><code>
+&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
+&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Pokemon&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;table border="1" bgcolor="#f0f0f0" width="100%"&gt;
+    &lt;tr bgcolor="#949494"&gt;&lt;th&gt;id&lt;/th&gt;&lt;th&gt;name&lt;/th&gt;&lt;th&gt;trainer&lt;/th&gt;&lt;th&gt;sex&lt;/th&gt;&lt;th&gt;level&lt;/th&gt;&lt;/tr&gt;
+    &lt;c:forEach items="${pokemons}" var="pokemon"&gt;
+        &lt;tr align="center"&gt;&lt;td&gt;${pokemon.pokemon_id}&lt;/td&gt;&lt;td&gt;${pokemon.pokemon_name}&lt;/td&gt;&lt;td&gt;${pokemon.trainer_id}&lt;/td&gt;
+            &lt;td&gt;${pokemon.sex}&lt;/td&gt;&lt;td&gt;${pokemon.level}&lt;/td&gt;&lt;/tr&gt;
+    &lt;/c:forEach&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
 
-<p>序列化前后是同一个对象了。</p>
+<p>至此，SSM的搭建工作告一段落，配置好Tomcat即可运行，输入对应的训练师名字和密码即可查询到拥有的Pokemon情况。</p>
 <hr>
 
       
@@ -807,14 +1089,14 @@ Student@5acf9800
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <li><strong>本文标题：</strong> Java序列化</li>
+  <li><strong>本文标题：</strong> Spring+SpringMVC+Mybatis整合</li>
   <li class="post-copyright-author">
     <strong>本文作者： </strong>Tao</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://Satomi12.github.io/2019/07/22/serialize/" title="Java序列化">http://Satomi12.github.io/2019/07/22/serialize/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/07/22/serialize/" aria-label="复制成功！"></i></span>
+    <a href="http://Satomi12.github.io/2019/08/03/SSM/" title="Spring+SpringMVC+Mybatis整合">http://Satomi12.github.io/2019/08/03/SSM/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/08/03/SSM/" aria-label="复制成功！"></i></span>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -843,7 +1125,11 @@ Student@5acf9800
         
         <div class="post-tags">
           
-            <a href="/tags/序列化/" rel="tag"><i class="fa fa-tag"></i> 序列化</a>
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+          
+            <a href="/tags/SpringMVC/" rel="tag"><i class="fa fa-tag"></i> SpringMVC</a>
+          
+            <a href="/tags/MyBatis/" rel="tag"><i class="fa fa-tag"></i> MyBatis</a>
           
         </div>
       
@@ -856,8 +1142,8 @@ Student@5acf9800
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/09/upload/" rel="next" title="Servlet文件上传">
-                <i class="fa fa-chevron-left"></i> Servlet文件上传
+              <a href="/2019/07/28/mybatis/" rel="next" title="MyBatis数据库操作">
+                <i class="fa fa-chevron-left"></i> MyBatis数据库操作
               </a>
             
           </div>
@@ -865,10 +1151,6 @@ Student@5acf9800
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/28/mybatis/" rel="prev" title="MyBatis数据库操作">
-                MyBatis数据库操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1124,7 +1406,7 @@ Student@5acf9800
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Serializable接口"><span class="nav-number">1.</span> <span class="nav-text">Serializable接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java序列化"><span class="nav-number">2.</span> <span class="nav-text">Java序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java反序列化"><span class="nav-number">3.</span> <span class="nav-text">Java反序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#serialVersionUID属性"><span class="nav-number">4.</span> <span class="nav-text">serialVersionUID属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transient关键字"><span class="nav-number">5.</span> <span class="nav-text">transient关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#被transient修饰的属性能否序列化"><span class="nav-number">6.</span> <span class="nav-text">被transient修饰的属性能否序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList的序列化"><span class="nav-number">6.1.</span> <span class="nav-text">ArrayList的序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化transient字段"><span class="nav-number">6.2.</span> <span class="nav-text">序列化transient字段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列化与单例模式"><span class="nav-number">7.</span> <span class="nav-text">序列化与单例模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建表"><span class="nav-number">1.1.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引入依赖"><span class="nav-number">1.2.</span> <span class="nav-text">引入依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从MyBatis开始"><span class="nav-number">2.</span> <span class="nav-text">从MyBatis开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建pojo类"><span class="nav-number">2.1.</span> <span class="nav-text">创建pojo类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口定义"><span class="nav-number">2.2.</span> <span class="nav-text">接口定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写Mapper"><span class="nav-number">2.3.</span> <span class="nav-text">编写Mapper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyBatis配置文件"><span class="nav-number">2.4.</span> <span class="nav-text">MyBatis配置文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring配置文件"><span class="nav-number">3.</span> <span class="nav-text">Spring配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试Spring和MyBatis的整合"><span class="nav-number">4.</span> <span class="nav-text">测试Spring和MyBatis的整合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC部分"><span class="nav-number">5.</span> <span class="nav-text">SpringMVC部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml文件"><span class="nav-number">5.1.</span> <span class="nav-text">web.xml文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC配置文件"><span class="nav-number">5.2.</span> <span class="nav-text">SpringMVC配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制器Controller"><span class="nav-number">5.3.</span> <span class="nav-text">控制器Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp页面"><span class="nav-number">5.4.</span> <span class="nav-text">jsp页面</span></a></li></ol></li></ol></div>
             
 
           </div>
