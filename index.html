@@ -399,6 +399,196 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix熔断监控出现的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content="This is a new blog!">
+      <meta itemprop="image" content="/images/Breloom.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/24/Spring-Cloud-Hystrix熔断监控出现的问题/" class="post-title-link" itemprop="url">Spring Cloud Hystrix熔断监控出现的问题</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 18:51:26 / 修改时间：19:11:00" itemprop="dateCreated datePublished" datetime="2019-09-24T18:51:26+08:00">2019-09-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>Unable to connect to Command Metric Stream.</strong></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="版本问题"><a href="#版本问题" class="headerlink" title="版本问题"></a>版本问题</h3><p>首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，所以要小心！</p>
+<pre class="lang-xml"><code>
+&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</code></pre>
+
+<h3 id="端点未开放"><a href="#端点未开放" class="headerlink" title="端点未开放"></a>端点未开放</h3><p>在spring boot 2.x以上版本，默认只开放了少数端点，更多的需要自己去开放。<strong>也就是说hystrix.stream这个端点未开放。</strong></p>
+<pre class="lang-yml"><code>
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+</code></pre>
+
+<h3 id="配置ServletRegistrationBean"><a href="#配置ServletRegistrationBean" class="headerlink" title="配置ServletRegistrationBean"></a>配置ServletRegistrationBean</h3><p>在项目里配置上以下这段代码：</p>
+<pre class="lang-java"><code>
+@Bean
+public ServletRegistrationBean getServlet() {
+    HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+    ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+    registrationBean.setLoadOnStartup(1);
+    registrationBean.addUrlMappings("/actuator/hystrix.stream");
+    registrationBean.setName("HystrixMetricsStreamServlet");
+    return registrationBean;
+}
+</code></pre>
+        
+      
+    </div>
+
+    
+      
+        <!--noindex-->
+        
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/24/Spring-Cloud-Hystrix熔断监控出现的问题/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+        <!--/noindex-->
+      
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/08/03/SSM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -461,7 +651,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-05 16:09:31" itemprop="dateModified" datetime="2019-08-05T16:09:31+08:00">2019-08-05</time>
+                <time title="修改时间：2019-09-24 18:59:54" itemprop="dateModified" datetime="2019-09-24T18:59:54+08:00">2019-09-24</time>
               
             
           </span>
@@ -2112,194 +2302,13 @@ public class Student implements Serializable {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/06/18/Morries-order/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tao">
-      <meta itemprop="description" content="This is a new blog!">
-      <meta itemprop="image" content="/images/Breloom.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/18/Morries-order/" class="post-title-link" itemprop="url">完美的二叉树遍历算法 Morris Traversal</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-18 21:36:17" itemprop="dateCreated datePublished" datetime="2019-06-18T21:36:17+08:00">2019-06-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-20 21:59:22" itemprop="dateModified" datetime="2019-06-20T21:59:22+08:00">2019-06-20</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>传统的二叉树遍历算法有递归和非递归两种，但它们都需要O(n)的空间复杂度，在数据结构教材上似乎也默认了二叉树的遍历需要O(n)的空间复杂度，但实际上，有一种更为优秀的二叉树遍历算法，就是本文的主角——Morris Traversal。</p>
-<div class="note info"><p>Morris Travalsal在做到O(1)空间复杂度的同时，还能保证O(n)的时间复杂度，可谓是完美的算法。</p></div>
-        
-      
-    </div>
-
-    
-      
-        <!--noindex-->
-        
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/18/Morries-order/">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-        <!--/noindex-->
-      
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2341,7 +2350,7 @@ public class Student implements Serializable {
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3100,9 +3109,9 @@ public class Student implements Serializable {
       
     
       
-        
-      
     
+      
+        
       
     
   

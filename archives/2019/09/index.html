@@ -120,18 +120,16 @@
 
 
 
-  <meta name="description" content="求素数的方法有很多，采用暴力解法虽然可行，但是时间复杂度却达到了$O(n^2)$，稍微优化一下，使得素数的判断增长到 $\sqrt{n}$ 即可，但是这样的时间复杂度仍然有 $O(n\sqrt{n})$，显然难以令人满意。本文介绍两种比较优秀的素数筛法，Eratosthenes筛法与Euler筛法，它们的时间复杂度比暴力解法优秀的多。 Euler筛法的时间复杂度可以达到 $O(n)$，是最优秀的素">
-<meta name="keywords" content="算法,数论">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Eratosthenes 筛法与 Euler 筛法">
-<meta property="og:url" content="http://Satomi12.github.io/2019/06/19/seive/index.html">
+  <meta name="description" content="This is a new blog!">
+<meta property="og:type" content="website">
+<meta property="og:title" content="我的博客">
+<meta property="og:url" content="http://Satomi12.github.io/archives/2019/09/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="求素数的方法有很多，采用暴力解法虽然可行，但是时间复杂度却达到了$O(n^2)$，稍微优化一下，使得素数的判断增长到 $\sqrt{n}$ 即可，但是这样的时间复杂度仍然有 $O(n\sqrt{n})$，显然难以令人满意。本文介绍两种比较优秀的素数筛法，Eratosthenes筛法与Euler筛法，它们的时间复杂度比暴力解法优秀的多。 Euler筛法的时间复杂度可以达到 $O(n)$，是最优秀的素">
+<meta property="og:description" content="This is a new blog!">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T05:02:53.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Eratosthenes 筛法与 Euler 筛法">
-<meta name="twitter:description" content="求素数的方法有很多，采用暴力解法虽然可行，但是时间复杂度却达到了$O(n^2)$，稍微优化一下，使得素数的判断增长到 $\sqrt{n}$ 即可，但是这样的时间复杂度仍然有 $O(n\sqrt{n})$，显然难以令人满意。本文介绍两种比较优秀的素数筛法，Eratosthenes筛法与Euler筛法，它们的时间复杂度比暴力解法优秀的多。 Euler筛法的时间复杂度可以达到 $O(n)$，是最优秀的素">
+<meta name="twitter:title" content="我的博客">
+<meta name="twitter:description" content="This is a new blog!">
 
 
 
@@ -141,7 +139,7 @@
 
   
   
-  <link rel="canonical" href="http://Satomi12.github.io/2019/06/19/seive/">
+  <link rel="canonical" href="http://Satomi12.github.io/archives/2019/09/">
 
 
 
@@ -151,7 +149,7 @@
   };
 </script>
 
-  <title>Eratosthenes 筛法与 Euler 筛法 | 我的博客</title>
+  <title>归档 | 我的博客</title>
   
 
 
@@ -199,7 +197,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -309,7 +307,7 @@
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
 
     
     
@@ -380,316 +378,104 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
 
-  
+      
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        嗯..! 目前共计 11 篇日志。 继续努力。
+      </span>
+      
 
-  
-  
-  
+      
 
-  
+        
+        
+        
+
+        
+          
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          </div>
+        
+        
+
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/06/19/seive/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tao">
-      <meta itemprop="description" content="This is a new blog!">
-      <meta itemprop="image" content="/images/Breloom.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="我的博客">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
+          <a class="post-title-link" href="/2019/09/24/Spring-Cloud-Hystrix熔断监控出现的问题/" itemprop="url">
+            
+              <span itemprop="name">Spring Cloud Hystrix熔断监控出现的问题</span>
+            
+          </a>
         
-          <h1 class="post-title" itemprop="name headline">Eratosthenes 筛法与 Euler 筛法
+      </h2>
 
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-19 21:24:51" itemprop="dateCreated datePublished" datetime="2019-06-19T21:24:51+08:00">2019-06-19</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-21 13:02:53" itemprop="dateModified" datetime="2019-06-21T13:02:53+08:00">2019-06-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/06/19/seive/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/19/seive/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-file"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>求素数的方法有很多，采用暴力解法虽然可行，但是时间复杂度却达到了$O(n^2)$，稍微优化一下，使得素数的判断增长到 $\sqrt{n}$ 即可，但是这样的时间复杂度仍然有 $O(n\sqrt{n})$，显然难以令人满意。本文介绍两种比较优秀的素数筛法，Eratosthenes筛法与Euler筛法，它们的时间复杂度比暴力解法优秀的多。</p>
-<div class="note default"><p>Euler筛法的时间复杂度可以达到 $O(n)$，是最优秀的素数求解方法。</p></div>
-
-<a id="more"></a>
-<h2 id="Eratosthenes筛法"><a href="#Eratosthenes筛法" class="headerlink" title="Eratosthenes筛法"></a>Eratosthenes筛法</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>Eratosthenes筛法又称为埃氏筛法，它的思想非常简单：从最小的素数2开始，每当遇到一个素数，就将该素数的2倍，3倍，4倍，……，n倍筛去，这样在给定一个上界n后，就能够求出该范围内的所有素数。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eratosthenesSeive</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span>[] isPrime=<span class="keyword">new</span> <span class="keyword">boolean</span>[n+<span class="number">1</span>];</span><br><span class="line">    isPrime[<span class="number">0</span>]=isPrime[<span class="number">1</span>]=<span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isPrime[i])&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+i;j&lt;=n;j+=i)&#123;</span><br><span class="line">                isPrime[j]=<span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>埃氏筛法的时间复杂度为O(nlglgn)，具体证明不在本文的讨论范围内，可以参考数论相关知识。</p>
-<h2 id="Euler筛法"><a href="#Euler筛法" class="headerlink" title="Euler筛法"></a>Euler筛法</h2><p>又称欧拉筛法，本文着重讲欧拉筛法，它能在线性时间复杂度内求出素数，有着极好的性能。</p>
-<h3 id="欧拉筛法与埃氏筛法"><a href="#欧拉筛法与埃氏筛法" class="headerlink" title="欧拉筛法与埃氏筛法"></a>欧拉筛法与埃氏筛法</h3><p>欧拉筛法在思想上与埃氏筛法比较相近，但两者有一个区别，在埃氏筛法中，一个合数可能同时被多个素数筛去，比如28既会被2筛去又会被7筛去，这是埃氏筛法的时间复杂度不能达到O(n)的原因。欧拉筛法朝着这个目标做了一些努力，改进了一下算法，使得每个合数仅被筛去一次，于是保证了时间复杂度是线性的。</p>
-<h3 id="两个问题"><a href="#两个问题" class="headerlink" title="两个问题"></a>两个问题</h3><p>要实现欧拉筛法的想法，就必须得解决两个问题：</p>
-<ul>
-<li>如何保证所有合数都会被筛去</li>
-<li>如何保证所有合数仅被筛去一次</li>
-</ul>
-<p>要解决这两个问题，我们要了解一个前提：所有合数均可被拆成若干个素数相乘。换句话说，<strong>所有的数(大于等于2)，要么是素数，要么可以表示成素数的乘积</strong>。</p>
-<p>既然所有合数都能被表示成素数的乘积，那么解决第一个问题的方案有了：用素数筛去所有的合数。如何保证所有合数仅被筛去一次：<strong>仅用最小的素数筛去它们</strong>，第二个问题也随之迎刃而解，这就是欧拉筛法的中心思想。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">eulerSeive</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span>[] isPrime=<span class="keyword">new</span> <span class="keyword">boolean</span>[n+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span>[] prime=<span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">    <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">    isPrime[<span class="number">0</span>]=isPrime[<span class="number">1</span>]=<span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isPrime[i])&#123;</span><br><span class="line">            prime[cnt++]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;cnt;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i*prime[j]&gt;n) <span class="keyword">break</span>;</span><br><span class="line">            isPrime[i*prime[j]]=<span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<div class="note info"><p>Euler筛法因为每个合数仅被筛去一次，不会造成埃氏筛法那样重复筛的问题，所以时间复杂度是O(n)。</p></div>
-
-<h3 id="核心代码的理解"><a href="#核心代码的理解" class="headerlink" title="核心代码的理解"></a>核心代码的理解</h3><p>欧拉筛法的代码比较简短，但是要理解起来并不是那么容易，欧拉筛法的精华就在于下面这句：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>) <span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>为什么当 i % prime[j] == 0 时就要跳出内部循环呢？当循环执行到满足 i % prime[j] == 0 时，说明了一个事实：<strong>i 不能被 prime[0..j-1] 整除</strong>。也就是说，prime[j] 是 i 最小的质因子，i 应该被 prime[j] 筛去。若此时不跳出循环，循环的下一轮就要筛去 i * prime[j+1]，而且是被 prime[j+1] 筛去。另一方面 i = prime[j] * b，于是 i * prime[j+1] = prime[j] * (prime[j+1] * b)，说明应该被 prime[j] 筛去。素数数组是升序排列的，因此 i * prime[j+1] 应该仅被 prime[j] 筛去，所以必须跳出循环，否则会造成重复筛去合数的问题。</p>
-</li>
-<li><p>当 i % prime[j] != 0 时，继续循环会不会出错？首先 i 不能被 prime[0..j] 整除，下一轮循环中 i * prime[j+1] 也不可能被 prime[0..j] 整除，所以 i * prime[j+1] 应该被 prime[j+1] 筛去，继续循环没有问题。</p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>埃氏筛法和欧拉筛法都是优秀的素数筛法，埃氏筛法思路简单，欧拉筛法效率高。当 n 较小时，不妨使用埃氏筛法；当 n 特别大时，欧拉筛法是更好的选择。</p>
-<hr>
-
-      
-    </div>
-
-    
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-      <div>
-        
-
-
-
-
-  
-
-
-
-<div class="post-copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-  <li><strong>本文标题：</strong> Eratosthenes 筛法与 Euler 筛法</li>
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Tao</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="http://Satomi12.github.io/2019/06/19/seive/" title="Eratosthenes 筛法与 Euler 筛法">http://Satomi12.github.io/2019/06/19/seive/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/06/19/seive/" aria-label="复制成功！"></i></span>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
-</div>
-<script>
-  var clipboard = new Clipboard('.fa-clipboard');
-  $(".fa-clipboard").click(function(){
-    clipboard.on('success', function(){
-      swal({
-        title: "",
-        text: '复制成功',
-        icon: "success",
-        showConfirmButton: true
-        });
-  });
-  });
-</script>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-09-24T18:51:26+08:00" content="2019-09-24">
+          09-24
+        </time>
       </div>
-    
 
-    <footer class="post-footer">
-      
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-            <a href="/tags/数论/" rel="tag"><i class="fa fa-tag"></i> 数论</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/18/Morries-order/" rel="next" title="完美的二叉树遍历算法 Morris Traversal">
-                <i class="fa fa-chevron-left"></i> 完美的二叉树遍历算法 Morris Traversal
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/21/Manacher/" rel="prev" title="解决回文串问题的利器 Manacher 算法">
-                解决回文串问题的利器 Manacher 算法 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
+
+      
+
+    </div>
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
           
-
-  
-    <div class="comments" id="comments">
-    </div>
-
-  
-
-
 
         </div>
         
@@ -709,17 +495,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -907,23 +684,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Eratosthenes筛法"><span class="nav-number">1.</span> <span class="nav-text">Eratosthenes筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">1.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">1.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.3.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler筛法"><span class="nav-number">2.</span> <span class="nav-text">Euler筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#欧拉筛法与埃氏筛法"><span class="nav-number">2.1.</span> <span class="nav-text">欧拉筛法与埃氏筛法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个问题"><span class="nav-number">2.2.</span> <span class="nav-text">两个问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">2.3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心代码的理解"><span class="nav-number">2.4.</span> <span class="nav-text">核心代码的理解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -1085,10 +845,6 @@
 
 
   
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
 
   
 
@@ -1107,7 +863,26 @@
   
 
   
+    
+      
+    
   
+  
+  
+    <script src="/lib/quicklink/quicklink.umd.js"></script>
+    <script>
+      
+        window.addEventListener('load', () => {
+      
+        quicklink({
+          timeout: 3000,
+          priority: true,
+          ignores: [uri => uri.includes('#'),uri => uri == 'http://Satomi12.github.io/archives/2019/09/',]
+        });
+      
+        });
+      
+    </script>
   
 
 
@@ -1143,8 +918,6 @@
 
 
 
-
-  
 
 
   
@@ -1482,46 +1255,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
