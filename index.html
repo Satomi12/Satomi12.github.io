@@ -444,7 +444,7 @@
                 
               
 
-              <time title="创建时间：2019-09-25 13:26:02 / 修改时间：13:53:06" itemprop="dateCreated datePublished" datetime="2019-09-25T13:26:02+08:00">2019-09-25</time>
+              <time title="创建时间：2019-09-25 13:26:02 / 修改时间：14:00:39" itemprop="dateCreated datePublished" datetime="2019-09-25T13:26:02+08:00">2019-09-25</time>
             
 
             
@@ -517,7 +517,7 @@ Could not resolve placeholder 'xxxx' in value "${xxxx}"
 
 <h3 id="bootstrap-yml配置"><a href="#bootstrap-yml配置" class="headerlink" title="bootstrap.yml配置"></a>bootstrap.yml配置</h3><p>获取配置文件的信息要配置在这个文件里面，因为spring boot启动是先加载bootstrap.yml，再加载application.yml，而另一方面，配置信息必须先于application.yml的内容被加载。</p>
 <h3 id="注册中心和spring-cloud-config-discovery配置"><a href="#注册中心和spring-cloud-config-discovery配置" class="headerlink" title="注册中心和spring.cloud.config.discovery配置"></a>注册中心和spring.cloud.config.discovery配置</h3><p>注意，问题基本上是出在这里！注册中心必须在bootstrap.yml中配置，而且<br>还要配置以下两项：</p>
-<pre class="class-yml"><code>
+<pre class="lang-yml"><code>
 spring:
   cloud:
     config:
