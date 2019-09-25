@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于Spring Cloud Config客户端无法获取Server端的配置信息]]></title>
+    <url>%2F2019%2F09%2F25%2Fconfig%2F</url>
+    <content type="text"><![CDATA[问题Spring Cloud Config获取server端配置信息失败： Could not resolve placeholder 'xxxx' in value "${xxxx}" 解决方案首先保证不是由于版本冲突引起的，spring boot和spring cloud的版本要匹配，去spring官网查看spring boot和spring cloud匹配的版本，我这里是2.1.8.REALEASE和Greenwich.RELEASE。 引入config-client &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-config-client&lt;/artifactId&gt; &lt;/dependency&gt; bootstrap.yml配置获取配置文件的信息要配置在这个文件里面，因为spring boot启动是先加载bootstrap.yml，再加载application.yml，而另一方面，配置信息必须先于application.yml的内容被加载。 注册中心和spring.cloud.config.discovery配置注意，问题基本上是出在这里！注册中心必须在bootstrap.yml中配置，而且还要配置以下两项： spring: cloud: config: discovery: enabled: true service-id: cloud-config-server 因为在这里就要去发现config server，可见此时注册中心必须已经配置，从而注册中心必须在bootstrap.yml中配置。]]></content>
+      <categories>
+        <category>微服务</category>
+      </categories>
+      <tags>
+        <tag>Spring Cloud</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Spring Cloud Hystrix熔断监控出现的问题]]></title>
     <url>%2F2019%2F09%2F24%2FSpring-Cloud-Hystrix%E7%86%94%E6%96%AD%E7%9B%91%E6%8E%A7%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[问题Unable to connect to Command Metric Stream. 解决方法版本问题首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，所以要小心！ &lt;dependencyManagement&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt; &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt; &lt;version&gt;${spring-cloud.version}&lt;/version&gt; &lt;type&gt;pom&lt;/type&gt; &lt;scope&gt;import&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;/dependencyManagement&gt; 端点未开放在spring boot 2.x以上版本，默认只开放了少数端点，更多的需要自己去开放。也就是说hystrix.stream这个端点未开放。 management: endpoints: web: exposure: include: "*" 配置ServletRegistrationBean在项目里配置上以下这段代码： @Bean public ServletRegistrationBean getServlet() { HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet(); ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet); registrationBean.setLoadOnStartup(1); registrationBean.addUrlMappings("/actuator/hystrix.stream"); registrationBean.setName("HystrixMetricsStreamServlet"); return registrationBean; }]]></content>
