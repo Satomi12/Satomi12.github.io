@@ -120,16 +120,18 @@
 
 
 
-  <meta name="description" content="This is a new blog!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="http://Satomi12.github.io/tags/JDBC/index.html">
+  <meta name="description" content="问题Unable to connect to Command Metric Stream. 解决方法版本问题首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，">
+<meta name="keywords" content="Spring Cloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Cloud Hystrix熔断监控出现的问题">
+<meta property="og:url" content="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="This is a new blog!">
+<meta property="og:description" content="问题Unable to connect to Command Metric Stream. 解决方法版本问题首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-25T05:58:04.908Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
-<meta name="twitter:description" content="This is a new blog!">
+<meta name="twitter:title" content="Spring Cloud Hystrix熔断监控出现的问题">
+<meta name="twitter:description" content="问题Unable to connect to Command Metric Stream. 解决方法版本问题首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，">
 
 
 
@@ -139,7 +141,7 @@
 
   
   
-  <link rel="canonical" href="http://Satomi12.github.io/tags/JDBC/">
+  <link rel="canonical" href="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/">
 
 
 
@@ -149,7 +151,7 @@
   };
 </script>
 
-  <title>标签: JDBC | 我的博客</title>
+  <title>Spring Cloud Hystrix熔断监控出现的问题 | 我的博客</title>
   
 
 
@@ -197,7 +199,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,7 +275,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -378,83 +380,327 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JDBC<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tao">
+      <meta itemprop="description" content="This is a new blog!">
+      <meta itemprop="image" content="/images/Breloom.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/07/02/JDBC/" itemprop="url">
-            
-              <span itemprop="name">JDBC 连接数据库</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Spring Cloud Hystrix熔断监控出现的问题
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-02T13:52:48+08:00" content="2019-07-02">
-          07-02
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-24 18:51:26" itemprop="dateCreated datePublished" datetime="2019-09-24T18:51:26+08:00">2019-09-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-09-25 13:58:04" itemprop="dateModified" datetime="2019-09-25T13:58:04+08:00">2019-09-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/微服务/" itemprop="url" rel="index"><span itemprop="name">微服务</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/09/24/Spring-Cloud-Hystrix/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/24/Spring-Cloud-Hystrix/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-file"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>Unable to connect to Command Metric Stream.</strong></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="版本问题"><a href="#版本问题" class="headerlink" title="版本问题"></a>版本问题</h3><p>首先第一个原因可能是spring cloud的版本和Spring boot不匹配，造成了某些冲突。所以建议在pom文件中尽量不要自己写spring cloud版本号，通过dependencyManagement标签引入和当前spring boot相匹配的大版本是更好的选择。版本问题是无解的，所以要小心！</p>
+<pre class="lang-xml"><code>
+&lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+            &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+            &lt;type&gt;pom&lt;/type&gt;
+            &lt;scope&gt;import&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
+</code></pre>
+
+<h3 id="端点未开放"><a href="#端点未开放" class="headerlink" title="端点未开放"></a>端点未开放</h3><p>在spring boot 2.x以上版本，默认只开放了少数端点，更多的需要自己去开放。<strong>也就是说hystrix.stream这个端点未开放。</strong></p>
+<pre class="lang-yml"><code>
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+</code></pre>
+
+<h3 id="配置ServletRegistrationBean"><a href="#配置ServletRegistrationBean" class="headerlink" title="配置ServletRegistrationBean"></a>配置ServletRegistrationBean</h3><p>在项目里配置上以下这段代码：</p>
+<pre class="lang-java"><code>
+@Bean
+public ServletRegistrationBean getServlet() {
+    HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
+    ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
+    registrationBean.setLoadOnStartup(1);
+    registrationBean.addUrlMappings("/actuator/hystrix.stream");
+    registrationBean.setName("HystrixMetricsStreamServlet");
+    return registrationBean;
+}
+</code></pre>
+
+<div class="note info"><p>注意，这个方案和上一个开放端点，只需配置一个就可以解决问题</p></div>
+
+<a id="more"></a>
+<hr>
 
       
     </div>
 
+    
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<div class="post-copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <li><strong>本文标题：</strong> Spring Cloud Hystrix熔断监控出现的问题</li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Tao</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/" title="Spring Cloud Hystrix熔断监控出现的问题">http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://Satomi12.github.io/2019/09/24/Spring-Cloud-Hystrix/" aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</div>
+<script>
+  var clipboard = new Clipboard('.fa-clipboard');
+  $(".fa-clipboard").click(function(){
+    clipboard.on('success', function(){
+      swal({
+        title: "",
+        text: '复制成功',
+        icon: "success",
+        showConfirmButton: true
+        });
+  });
+  });
+</script>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Spring-Cloud/" rel="tag"><i class="fa fa-tag"></i> Spring Cloud</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/03/SSM/" rel="next" title="Spring+SpringMVC+Mybatis整合">
+                <i class="fa fa-chevron-left"></i> Spring+SpringMVC+Mybatis整合
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/25/config/" rel="prev" title="关于Spring Cloud Config客户端无法获取Server端的配置信息">
+                关于Spring Cloud Config客户端无法获取Server端的配置信息 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -474,8 +720,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -667,6 +922,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本问题"><span class="nav-number">2.1.</span> <span class="nav-text">版本问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端点未开放"><span class="nav-number">2.2.</span> <span class="nav-text">端点未开放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置ServletRegistrationBean"><span class="nav-number">2.3.</span> <span class="nav-text">配置ServletRegistrationBean</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -828,6 +1100,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -882,6 +1158,8 @@
 
 
 
+
+  
 
 
   

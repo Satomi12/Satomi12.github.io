@@ -128,7 +128,7 @@
 <meta property="og:site_name" content="我的博客">
 <meta property="og:description" content="Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。 Serializable接口java 中只要实现了 Serializable 这个标记接口就可以序列化。  public class SerializeClass implements Serializable {...}   Java序列化首">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-23T08:19:42.424Z">
+<meta property="og:updated_time" content="2019-10-30T13:28:50.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java序列化">
 <meta name="twitter:description" content="Java序列化在网络传输中经常用到，除此之外有时也用于将对象保存至文件中，例如将从数据库中读取的对象保存到硬盘中以减少数据库的查询次数，实现了缓存的目的。 Serializable接口java 中只要实现了 Serializable 这个标记接口就可以序列化。  public class SerializeClass implements Serializable {...}   Java序列化首">
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-23 16:19:42" itemprop="dateModified" datetime="2019-07-23T16:19:42+08:00">2019-07-23</time>
+                <time title="修改时间：2019-10-30 21:28:50" itemprop="dateModified" datetime="2019-10-30T21:28:50+08:00">2019-10-30</time>
               
             
           </span>
@@ -721,7 +721,7 @@ private void readObject(ObjectInputStream in) throws Exception {
 
 <h2 id="序列化与单例模式"><a href="#序列化与单例模式" class="headerlink" title="序列化与单例模式"></a>序列化与单例模式</h2><p>在一般情况下序列化工作得很好，但是有些潜在的问题不能忽略：序列化会破坏单例模式。<br>先将Student类改造成符合单例模式的类，在类中添加以下代码:</p>
 <pre class="lang-java"><code>
-private static Student instance;
+private volatile static Student instance;
 
 //双加载机制避免重排序问题
 public static Student getInstance() {
@@ -943,7 +943,7 @@ Student@5acf9800
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
