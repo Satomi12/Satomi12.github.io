@@ -111,8 +111,8 @@
         <category>数据库</category>
       </categories>
       <tags>
-        <tag>JDBC</tag>
         <tag>MySQL</tag>
+        <tag>JDBC</tag>
         <tag>Java</tag>
       </tags>
   </entry>
